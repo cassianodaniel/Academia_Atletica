@@ -20,10 +20,12 @@ class Pagamentos{
         void print();
 
         void geraParcelas();
-        //void visualizaPagamentos();
+        void mostraParcelas();
+        string alteraParcela(string nomedomes, int data);
 
     protected:
-        int Dia, Mes, Ano;
+        int Dia, Mes, Ano, Janeiro, Fevereiro, Marco, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro;
+
 };
 
 #endif

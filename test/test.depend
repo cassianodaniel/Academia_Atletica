@@ -1,23 +1,23 @@
 # depslib dependency file v1.0
-1585454378 source:c:\users\asus\documents\testedecompilacao\test\main.cpp
+1585460470 source:c:\users\asus\documents\testedecompilacao\test\main.cpp
 	<stdio.h>
 	<stdlib.h>
 	<iostream>
 	"Aluno.h"
 	"Pagamentos.h"
 
-1585448913 source:c:\users\asus\documents\testedecompilacao\test\src\aluno.cpp
+1585456764 source:c:\users\asus\documents\testedecompilacao\test\src\aluno.cpp
 	"Aluno.h"
 
-1585448913 c:\users\asus\documents\testedecompilacao\test\include\aluno.h
+1585456764 c:\users\asus\documents\testedecompilacao\test\include\aluno.h
 	<iostream>
 	<string>
 	"Pagamentos.h"
 
-1585449462 c:\users\asus\documents\testedecompilacao\test\include\pagamentos.h
+1585457838 c:\users\asus\documents\testedecompilacao\test\include\pagamentos.h
 	<iostream>
 	<string.h>
 
-1585449475 source:c:\users\asus\documents\testedecompilacao\test\src\pagamentos.cpp
+1585460558 source:c:\users\asus\documents\testedecompilacao\test\src\pagamentos.cpp
 	"Pagamentos.h"
 

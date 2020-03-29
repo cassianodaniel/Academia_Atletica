@@ -14,6 +14,7 @@ class Aluno : public Pagamentos{
     private:
         string nome;
         string cpf;
+        bool ativo;
 };
 
 #endif
