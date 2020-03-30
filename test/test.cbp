@@ -37,10 +37,12 @@
 		<Unit filename="include/Aluno.h" />
 		<Unit filename="include/Dados.h" />
 		<Unit filename="include/Pagamentos.h" />
+		<Unit filename="include/SistemaAlunos.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Aluno.cpp" />
 		<Unit filename="src/Dados.cpp" />
 		<Unit filename="src/Pagamentos.cpp" />
+		<Unit filename="src/SistemaAlunos.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

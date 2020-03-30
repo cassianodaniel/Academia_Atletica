@@ -15,11 +15,6 @@ class Aluno : public Dados
 
         vector<Dados> alunos;
 
-        void consultaAluno();
-        void cadastraAluno(Aluno *al);
-        void visualizarAlunos();
-
-
     protected:
 
     private:
