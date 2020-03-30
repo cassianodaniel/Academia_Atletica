@@ -17,13 +17,10 @@ class Pagamentos{
         void setMes(int);
         void setAno(int);
         string getMesExtenso(int);
-        void print();
 
         void geraParcelas();
         void mostraParcelas();
         string alteraParcela(string nomedomes, int data);
-
-    protected:
         int Dia, Mes, Ano, Janeiro, Fevereiro, Marco, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro;
 
 };

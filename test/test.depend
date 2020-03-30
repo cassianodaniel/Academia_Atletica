@@ -1,23 +1,37 @@
 # depslib dependency file v1.0
-1585460470 source:c:\users\asus\documents\testedecompilacao\test\main.cpp
+1585546934 source:c:\users\asus\documents\testedecompilacao\test\main.cpp
 	<stdio.h>
 	<stdlib.h>
 	<iostream>
-	"Aluno.h"
+	"Dados.h"
 	"Pagamentos.h"
-
-1585456764 source:c:\users\asus\documents\testedecompilacao\test\src\aluno.cpp
 	"Aluno.h"
 
-1585456764 c:\users\asus\documents\testedecompilacao\test\include\aluno.h
-	<iostream>
+1585546985 source:c:\users\asus\documents\testedecompilacao\test\src\aluno.cpp
+	"Aluno.h"
 	<string>
-	"Pagamentos.h"
+	<vector>
+	<iostream>
 
-1585457838 c:\users\asus\documents\testedecompilacao\test\include\pagamentos.h
+1585544959 c:\users\asus\documents\testedecompilacao\test\include\aluno.h
+	"Dados.h"
+	<vector>
+	<iostream>
+
+1585545823 c:\users\asus\documents\testedecompilacao\test\include\pagamentos.h
 	<iostream>
 	<string.h>
 
-1585460558 source:c:\users\asus\documents\testedecompilacao\test\src\pagamentos.cpp
+1585545911 source:c:\users\asus\documents\testedecompilacao\test\src\pagamentos.cpp
 	"Pagamentos.h"
+	<iostream>
+
+1585540061 c:\users\asus\documents\testedecompilacao\test\include\dados.h
+	<iostream>
+	<string>
+	<vector>
+	"Pagamentos.h"
+
+1585538712 source:c:\users\asus\documents\testedecompilacao\test\src\dados.cpp
+	"Dados.h"
 

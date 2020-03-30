@@ -35,9 +35,11 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Aluno.h" />
+		<Unit filename="include/Dados.h" />
 		<Unit filename="include/Pagamentos.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Aluno.cpp" />
+		<Unit filename="src/Dados.cpp" />
 		<Unit filename="src/Pagamentos.cpp" />
 		<Extensions>
 			<code_completion />

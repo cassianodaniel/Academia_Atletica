@@ -1,20 +1,28 @@
 #ifndef ALUNO_H
 #define ALUNO_H
+#include "Dados.h"
+#include <vector>
 #include <iostream>
-#include <string>
 
-#include "Pagamentos.h"
-
-using namespace std;
-
-class Aluno : public Pagamentos{
+class Aluno : public Dados
+{
     public:
         Aluno();
-        Aluno(string nome,string cpf);
+
+        Aluno(string nome,string cpf,string cidade);
+
+        virtual ~Aluno();
+
+        vector<Dados> alunos;
+
+        void consultaAluno();
+        void cadastraAluno(Aluno *al);
+        void visualizarAlunos();
+
+
+    protected:
+
     private:
-        string nome;
-        string cpf;
-        bool ativo;
 };
 
-#endif
+#endif // ALUNO_H

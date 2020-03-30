@@ -1,4 +1,8 @@
 #include "Pagamentos.h"
+#include <iostream>
+//#include <algorithm>
+
+using namespace std;
 
 Pagamentos::Pagamentos(){
     this->Dia = 0;
@@ -130,10 +134,6 @@ void Pagamentos::setAno(int ano)
     Ano = (ano >= 0) ? ano : -ano;
 }
 
-void Pagamentos::print(){
-    cout << this->Dia << "/" << this->Mes << "/" << this->Ano;
-}
-
 void Pagamentos::geraParcelas(){
     this->Janeiro = this->Dia;
     if(Dia > 0 && Dia < 29){this->Fevereiro = this->Dia;}else{this->Fevereiro = 28;}
@@ -186,72 +186,93 @@ string Pagamentos::alteraParcela(string n, int d){
             }
     }
 
-    //______________________________________________________________________ && statement doesn't work so then change to another and if
-   /* if((n=="Maio" || n=="maio" || n=="MAIO")&&(d > 0 && d < 31))
-        {this->Maio = d;}
-        else{
-            this->Maio = 0;
-            return "Data inválida e não alterada com sucesso!";
-        };
-    if((n=="Junho" || n=="junho" || n=="JUNHO")&&(d > 0 && d < 31))
-        {this->Junho = d;}
-        else{
-            this->Junho = 0;
-            return "Data inválida e não alterada com sucesso!";
-        };
-    if((n=="Julho" || n=="julho" || n=="JULHO")&&(d > 0 && d < 31))
-        {this->Julho = d;}
-        else{
-            this->Julho = 0;
-            return "Data inválida e não alterada com sucesso!";
-        };
-    if((n=="Agosto" || n=="agosto" || n=="AGOSTO")&&(d > 0 && d < 31))
-    {this->Agosto = d;}
-        else{
-            this->Agosto = 0;
-            return "Data inválida e não alterada com sucesso!";
-        };
-    if((n=="Setembro" || n=="setembro" || n=="SETEMBRO")&&(d > 0 && d < 31))
-    {this->Setembro = d;}
-        else{
-            this->Setembro = 0;
-            return "Data inválida e não alterada com sucesso!";
-        };
-    if((n=="Outubro" || n=="outubro" || n=="OUTUBRO")&&(d > 0 && d <=31))
-    {this->Outubro = d;}
-        else{
-            this->Outubro = 0;
-            return "Data inválida e não alterada com sucesso!";
-        }
-    if((n=="Novembro" || n=="novembro" || n=="NOVEMBRO")&&(d > 0 && d < 31))
-    {this->Novembro = d;}
-        else{
-            this->Novembro = 0;
-            return "Data inválida e não alterada com sucesso!";
-        };
-    if((n=="Dezembro" || n=="dezembro" || n=="DEZEMBRO")&&(d > 0 && d <= 31))
-    {this->Dezembro = d;}
-        else{
-            this->Dezembro = 0;
-            return "Data inválida e não alterada com sucesso!";
-        };
-    */
+    if(n=="Maio" || n=="maio" || n=="MAIO"){
+       if(d > 0 && d <= 31){
+            this->Maio = d;
+            }else{
+                this->Maio = 0;
+                return "Data inválida e não alterada com sucesso!";
+            }
+    }
 
+    if(n=="Junho" || n=="junho" || n=="JUNHO"){
+       if(d > 0 && d < 31){
+            this->Junho = d;
+            }else{
+                this->Junho = 0;
+                return "Data inválida e não alterada com sucesso!";
+            }
+    }
+
+    if(n=="Julho" || n=="julho" || n=="JULHO"){
+       if(d > 0 && d <= 31){
+            this->Julho = d;
+            }else{
+                this->Julho = 0;
+                return "Data inválida e não alterada com sucesso!";
+            }
+    }
+
+    if(n=="Agosto" || n=="agosto" || n=="AGOSTO"){
+       if(d > 0 && d <= 31){
+            this->Agosto = d;
+            }else{
+                this->Agosto = 0;
+                return "Data inválida e não alterada com sucesso!";
+            }
+    }
+
+    if(n=="Setembro" || n=="setembro" || n=="SETEMBRO"){
+       if(d > 0 && d < 31){
+            this->Setembro = d;
+            }else{
+                this->Setembro = 0;
+                return "Data inválida e não alterada com sucesso!";
+            }
+    }
+
+    if(n=="Outubro" || n=="outubro" || n=="OUTUBRO"){
+       if(d > 0 && d <= 31){
+            this->Outubro = d;
+            }else{
+                this->Outubro = 0;
+                return "Data inválida e não alterada com sucesso!";
+            }
+    }
+
+    if(n=="Novembro" || n=="novembro" || n=="NOVEMBRO"){
+       if(d > 0 && d < 31){
+            this->Novembro = d;
+            }else{
+                this->Novembro = 0;
+                return "Data inválida e não alterada com sucesso!";
+            }
+    }
+
+    if(n=="Dezembro" || n=="dezembro" || n=="DEZEMBRO"){
+       if(d > 0 && d <= 31){
+            this->Dezembro = d;
+            }else{
+                this->Dezembro = 0;
+                return "Data inválida e não alterada com sucesso!";
+            }
+    }
 
     return "AlteraParcela() Falhou!";
 }
 
 void Pagamentos::mostraParcelas(){
-    cout << this->Janeiro << endl;
-    cout << this->Fevereiro << endl;
-    cout << this->Marco << endl;
-    cout << this->Abril << endl;
-    cout << this->Maio << endl;
-    cout << this->Junho << endl;
-    cout << this->Julho << endl;
-    cout << this->Agosto << endl;
-    cout << this->Setembro << endl;
-    cout << this->Outubro << endl;
-    cout << this->Novembro << endl;
-    cout << this->Dezembro << endl;
+    cout << Janeiro << endl;
+    cout << Fevereiro << endl;
+    cout << Marco << endl;
+    cout << Abril << endl;
+    cout << Maio << endl;
+    cout << Junho << endl;
+    cout << Julho << endl;
+    cout << Agosto << endl;
+    cout << Setembro << endl;
+    cout << Outubro << endl;
+    cout << Novembro << endl;
+    cout << Dezembro << endl;
 };
+
