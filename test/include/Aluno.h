@@ -9,7 +9,7 @@ class Aluno : public Dados
     public:
         Aluno();
 
-        Aluno(string nome,string cpf,string cidade);
+        Aluno(string nome,string cpf,string cidade, string endereco, string telefone);
 
         virtual ~Aluno();
 

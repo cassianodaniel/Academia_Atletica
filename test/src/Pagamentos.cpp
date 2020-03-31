@@ -8,6 +8,9 @@ Pagamentos::Pagamentos(){
     this->Dia = 0;
     this->Mes = 0;
     this->Ano = 0;
+    this->DiaOriginal = 0;
+    this->MesOriginal = 0;
+    this->AnoOriginal = 0;
     this->Janeiro = 0;
     this->Fevereiro = 0;
     this->Marco = 0;
@@ -20,6 +23,30 @@ Pagamentos::Pagamentos(){
     this->Outubro = 0;
     this->Novembro = 0;
     this->Dezembro = 0;
+    this->JaneiroPago = false;
+    this->FevereiroPago = false;
+    this->MarcoPago = false;
+    this->AbrilPago = false;
+    this->MaioPago = false;
+    this->JunhoPago = false;
+    this->JulhoPago = false;
+    this->AgostoPago = false;
+    this->SetembroPago = false;
+    this->OutubroPago = false;
+    this->NovembroPago = false;
+    this->DezembroPago = false;
+    /*this->JaneiroPagoEm = ;
+    this->FevereiroPagoEm = ;
+    this->MarcoPagoEm = ;
+    this->AbrilPagoEm = ;
+    this->MaioPagoEm = ;
+    this->JunhoPagoEm = ;
+    this->JulhoPagoEm = ;
+    this->AgostoPagoEm = ;
+    this->SetembroPagoEm = ;
+    this->OutubroPagoEm = ;
+    this->NovembroPagoEm = ;
+    this->DezembroPagoEm = ;*/
 }
 
 void Pagamentos::setPagamento(int dia, int mes, int ano)
@@ -27,6 +54,7 @@ void Pagamentos::setPagamento(int dia, int mes, int ano)
     if(ano >= 0)
     {
         this->Ano = ano;
+        this->AnoOriginal = ano;
     }
     if(ano < 0){
         this->Ano = 0;
@@ -34,6 +62,43 @@ void Pagamentos::setPagamento(int dia, int mes, int ano)
     if(mes <= 12 && mes >=1)
     {
         this->Mes = mes;
+        this->MesOriginal = mes;
+        if(mes == 1){
+            this->JaneiroPago = true;
+        }
+        if(mes == 2){
+            this->FevereiroPago = true;
+        }
+        if(mes == 3){
+            this->MarcoPago = true;
+        }
+        if(mes == 4){
+            this->AbrilPago = true;
+        }
+        if(mes == 5){
+            this->MaioPago = true;
+        }
+        if(mes == 6){
+            this->JunhoPago = true;
+        }
+        if(mes == 7){
+            this->JulhoPago = true;
+        }
+        if(mes == 8){
+            this->AgostoPago = true;
+        }
+        if(mes == 9){
+            this->SetembroPago = true;
+        }
+        if(mes == 10){
+            this->OutubroPago = true;
+        }
+        if(mes == 11){
+            this->NovembroPago = true;
+        }
+        if(mes == 12){
+            this->DezembroPago = true;
+        }
         if(mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12)
         {
             if(dia >= 1 && dia <= 31)
@@ -64,6 +129,7 @@ void Pagamentos::setPagamento(int dia, int mes, int ano)
         }
     }
     else this->Mes = 0;
+    this->DiaOriginal = Dia;
 }
 
 int Pagamentos::getAno()
@@ -79,49 +145,6 @@ int Pagamentos::getDia()
 int Pagamentos::getMes()
 {
     return this->Mes;
-}
-
-string Pagamentos::getMesExtenso(int mes){
-    switch(mes)
-    {
-    case 1:
-        return "Janeiro" ;
-        break;
-    case 2:
-        return "Fevereiro";
-        break;
-    case 3:
-        return "Marco";
-        break;
-    case 4:
-        return "Abril";
-        break;
-    case 5:
-        return "Maio";
-        break;
-    case 6:
-        return "Junho";
-        break;
-    case 7:
-        return "Julho";
-        break;
-    case 8:
-        return"Agosto";
-        break;
-    case 9:
-        return "Setembro";
-        break;
-    case 10:
-        return "Outubro";
-        break;
-    case 11:
-        return "Novembro";
-        break;
-    case 12:
-        return "Dezembro";
-        break;
-    }
-    return "None";
 }
 
 void Pagamentos::setMes(int mes)
@@ -275,4 +298,3 @@ void Pagamentos::mostraParcelas(){
     cout << Novembro << endl;
     cout << Dezembro << endl;
 };
-

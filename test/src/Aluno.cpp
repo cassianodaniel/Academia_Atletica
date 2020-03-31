@@ -13,12 +13,14 @@ Aluno::Aluno()
     cidade = ".";
 }
 
-Aluno::Aluno(string n,string c,string cid)
+Aluno::Aluno(string n,string c,string cid, string ende, string tel)
 {
     nome = n;
     cpf = c;
     ativo = true;
     cidade = cid;
+    endereco = ende;
+    telefone = tel;
 }
 
 Aluno::~Aluno()

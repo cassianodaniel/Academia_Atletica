@@ -15,15 +15,15 @@ setlocale(LC_ALL, "Portuguese");
 
     SistemaAlunos *manager = new SistemaAlunos();
 
-    Aluno *a1 = new Aluno("Daniel Cassiano", "417596", "Borborema");
+    Aluno *a1 = new Aluno("Daniel Cassiano", "417596", "Borborema", "Rua Aderaldo Silveira de Souza", "998354294");
     a1->setPagamento(20,03,2020);
     a1->geraParcelas();
 
-    Aluno *a2 = new Aluno("Antônio Cassiano", "456654", "Borborema");
+    Aluno *a2 = new Aluno("Antônio Cassiano", "456654", "Borborema", "Rua Aderaldo Silveira de Souza", "998354294");
     a2->setPagamento(31,03,2020);
     a2->geraParcelas();
 
-    Aluno *a3 = new Aluno("Auricélia Moura", "43212", "Serraria");
+    Aluno *a3 = new Aluno("Auricélia Moura", "43212", "Serraria", "Rua Aderaldo Silveira de Souza", "998354294");
     a3->setPagamento(10,02,2020);
     a3->geraParcelas();
 
@@ -33,6 +33,15 @@ setlocale(LC_ALL, "Portuguese");
 
     manager->visualizarAlunos();
     manager->consultaAluno();
+
+    manager->pagto();
+    manager->consultaAluno();
+
+    manager->cancelaPagto();
+
+    manager->consultaAluno();
+
+    cout << "Aperte ESC para sair.";
 
     return 0;
 }
