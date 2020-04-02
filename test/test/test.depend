@@ -1,0 +1,50 @@
+# depslib dependency file v1.0
+1585852064 source:c:\users\asus\documents\testedecompilacao\test\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<locale>
+	"Dados.h"
+	"Pagamentos.h"
+	"Aluno.h"
+	"SistemaAlunos.h"
+
+1585684345 source:c:\users\asus\documents\testedecompilacao\test\src\aluno.cpp
+	"Aluno.h"
+	<string>
+	<vector>
+	<iostream>
+
+1585684320 c:\users\asus\documents\testedecompilacao\test\include\aluno.h
+	"Dados.h"
+	<vector>
+	<iostream>
+
+1585683403 c:\users\asus\documents\testedecompilacao\test\include\pagamentos.h
+	<iostream>
+	<string.h>
+
+1585683357 source:c:\users\asus\documents\testedecompilacao\test\src\pagamentos.cpp
+	"Pagamentos.h"
+	<iostream>
+
+1585684151 c:\users\asus\documents\testedecompilacao\test\include\dados.h
+	<iostream>
+	<string>
+	<vector>
+	"Pagamentos.h"
+
+1585684345 source:c:\users\asus\documents\testedecompilacao\test\src\dados.cpp
+	"Dados.h"
+
+1585852572 source:c:\users\asus\documents\testedecompilacao\test\src\sistemaalunos.cpp
+	"SistemaAlunos.h"
+	<iostream>
+	"stdio.h"
+	<string>
+	<algorithm>
+	<vector>
+
+1585682957 c:\users\asus\documents\testedecompilacao\test\include\sistemaalunos.h
+	"Aluno.h"
+
