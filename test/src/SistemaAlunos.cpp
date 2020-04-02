@@ -34,7 +34,7 @@ void SistemaAlunos::consultaAluno(){
     cout << "Por favor, digite o NOME do aluno desejado para consulta." << endl;
     string n;
     getline(cin, n);
-    cout << n;
+    system("cls");
     for(unsigned int i = 0; i < this->alunos.size(); i++){
         transform(n.begin(),n.end(), n.begin(), ::tolower);
         transform(alunos[i].nome.begin(),alunos[i].nome.end(), alunos[i].nome.begin(), ::tolower);
@@ -81,6 +81,7 @@ void SistemaAlunos::pagto(){
     cout << "(NOME COMPLETO DE ACORDO COM O CADASTRO)" << endl;
     string nouc;
     getline(cin, nouc);
+    system("cls");
     transform(nouc.begin(),nouc.end(), nouc.begin(), ::tolower);
     for(unsigned int i=0; i < alunos.size(); i++){
         transform(alunos[i].nome.begin(),alunos[i].nome.end(), alunos[i].nome.begin(), ::tolower);
@@ -130,7 +131,7 @@ void SistemaAlunos::pagto(){
                 alunos[i].Fevereiro = data;
                 alunos[i].FevereiroPago = true;
             }
-            if(mes=="Março" || mes=="março" || mes=="MARÇO"){
+            if(mes=="Março" || mes=="março" || mes=="MARÇO" || mes=="Marco" || mes=="MARCO" || mes == "marco"){
                 alunos[i].Marco = data;
                 alunos[i].MarcoPago = true;
             }
@@ -181,6 +182,7 @@ void SistemaAlunos::cancelaPagto(){
     cout << "(NOME COMPLETO DE ACORDO COM O CADASTRO)" << endl;
     string nouc;
     getline(cin, nouc);
+    system("cls");
     transform(nouc.begin(),nouc.end(), nouc.begin(), ::tolower);
     for(unsigned int i=0; i < alunos.size(); i++){
         transform(alunos[i].nome.begin(),alunos[i].nome.end(), alunos[i].nome.begin(), ::tolower);

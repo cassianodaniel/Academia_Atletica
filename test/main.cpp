@@ -12,8 +12,9 @@ using namespace std;
 
 int main(){
 setlocale(LC_ALL, "Portuguese");
+SistemaAlunos *manager = new SistemaAlunos();
     int menu = 0;
-    while(menu != 8){
+    while(menu != 9){
             cout << "Bem-vindo ao programa de gerenciamento da Academia Atlética!" << endl;
             cout << "Por favor, digite a opção desejada:" << endl;
             cout << "1: Cadastrar novo aluno." << endl;
@@ -23,59 +24,66 @@ setlocale(LC_ALL, "Portuguese");
             cout << "5: Cadastrar novo pagamento." << endl;
             cout << "6: Consultar situação de aluno." << endl;
             cout << "7: Visualizar todos os alunos cadastrados." << endl;
-            cout << "8: Fechar programa e salvar alterações/dados.\n" << endl;
+            cout << "8: Remover aluno cadastrado." << endl;
+            cout << "9: Fechar programa e salvar alterações/dados.\n" << endl;
             cout << ("Atenção! Apenas saia do programa utilizando o comando sair!\n\n");
     cin >> menu;
     cin.ignore();
+    system("cls");
         switch(menu){
             case 1:{
                 cout << "Por favor, digite o nome do(a) aluno(a) a ser cadastrado.\n" << endl;
                 string nome;
                 getline(cin,nome);
+                system("cls");
                 cout << "Por favor, digite o CPF do(a) aluno(a) a ser cadastrado.\n" << endl;
                 string cpf;
                 getline(cin,cpf);
+                system("cls");
                 cout << "Por favor, digite a cidade do(a) aluno(a) a ser cadastrado.\n" << endl;
                 string cidade;
                 getline(cin,cidade);
+                system("cls");
                 cout << "Por favor, digite o endereço do(a) aluno(a) a ser cadastrado.\n" << endl;
                 string endereco;
                 getline(cin,endereco);
+                system("cls");
                 cout << "Por favor, digite o telefone do(a) aluno(a) a ser cadastrado.\n" << endl;
                 string telefone;
                 getline(cin,telefone);
+                system("cls");
                 Aluno *a1 = new Aluno(nome, cpf, cidade, endereco, telefone);
+
                 cout << "Por favor, digite APENAS O DIA (DOIS DÍGITOS) do primeiro pagamento do aluno (dia que as parcelas serão geradas)" << endl;
                 int dia;
                 cin >> dia;
                 cin.ignore();
+                system("cls");
                 cout << "Por favor, digite APENAS O MÊS (DOIS DÍGITOS) do primeiro pagamento do aluno." << endl;
                 int mes;
                 cin >> mes;
                 cin.ignore();
+                system("cls");
                 cout << "Por favor, digite APENAS O ANO (QUATRO DÍGITOS) do primeiro pagamento do aluno." << endl;
                 int ano;
                 cin >> ano;
                 cin.ignore();
+                system("cls");
 
                 a1->setPagamento(dia,mes,ano);
                 a1->geraParcelas();
 
-                SistemaAlunos *manager = new SistemaAlunos();
-
                 manager->cadastraAluno(a1);
-                cout << "Aluno " << nome << " cadastrado com sucesso!" << endl;
-            }
+                cout << "Aluno " << nome << " cadastrado com sucesso!\n" << endl;
+                }
                 break;
             case 2:{
                 break;
             }
-            case 3:{
-                SistemaAlunos *manager = new SistemaAlunos();
+            case 3:
                 manager->consultaAluno();
                 manager->pagto();
                 break;
-            }
             case 4:{
                 break;
             }
@@ -83,22 +91,24 @@ setlocale(LC_ALL, "Portuguese");
                 break;
             }
             case 6:{
-                SistemaAlunos *manager = new SistemaAlunos();
                 manager->consultaAluno();
                 break;
             }
             case 7:{
                 cout << "Para consultar todos os alunos, aperte ENTER, quando for solicitado o nome do aluno." << endl;
-                SistemaAlunos *manager = new SistemaAlunos();
                 manager->consultaAluno();
                 break;
             }
             case 8:{
+                //remover aluno cadastrado
+            }
+            case 9:{
+                //salvamento de arquivo
                 return 0;
             }
             default:
                 break;
-        }
+            }
     }
 /*
     SistemaAlunos *manager = new SistemaAlunos();

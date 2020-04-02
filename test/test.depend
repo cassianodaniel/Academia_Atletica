@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1585788645 source:c:\users\asus\documents\testedecompilacao\test\main.cpp
+1585852064 source:c:\users\asus\documents\testedecompilacao\test\main.cpp
 	<stdio.h>
 	<stdlib.h>
 	<iostream>
@@ -37,7 +37,7 @@
 1585684345 source:c:\users\asus\documents\testedecompilacao\test\src\dados.cpp
 	"Dados.h"
 
-1585684272 source:c:\users\asus\documents\testedecompilacao\test\src\sistemaalunos.cpp
+1585852572 source:c:\users\asus\documents\testedecompilacao\test\src\sistemaalunos.cpp
 	"SistemaAlunos.h"
 	<iostream>
 	"stdio.h"
