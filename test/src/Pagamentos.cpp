@@ -103,21 +103,21 @@ void Pagamentos::setPagamento(int dia, int mes, int ano)
         {
             if(dia >= 1 && dia <= 31)
                 this->Dia = dia;
-            else this->Dia = 0;
+            else this->Dia = 31;
         }
         else if(mes == 4 || mes == 6 || mes == 9 || mes == 11)
         {
-            if(dia >= 1 && dia >= 30)
+            if(dia >= 1 && dia <= 30)
                 this->Dia = dia;
-            else this->Dia = 1;
+            else this->Dia = 30;
         }
         else if(mes == 2)
         {
             if(dia >= 1 && dia <= 28)
                 this->Dia = dia;
-            else this->Dia = 0;
+            else this->Dia = 28;
         }
-        else if(ano % 4 == 0 && ano % 100 != 0 && ano % 400 == 0)
+        /*else if(ano % 4 == 0 && ano % 100 != 0 && ano % 400 == 0) //OPCAO DE ANO BISSEXTO
         {
             if(mes == 2)
             {
@@ -125,8 +125,8 @@ void Pagamentos::setPagamento(int dia, int mes, int ano)
                     this->Dia = dia;
                 }
             }
-            else this->Dia = 0;
-        }
+            else this->Dia = 29;
+        }*/
     }
     else this->Mes = 0;
     this->DiaOriginal = Dia;
@@ -159,16 +159,16 @@ void Pagamentos::setAno(int ano)
 
 void Pagamentos::geraParcelas(){
     this->Janeiro = this->Dia;
-    if(Dia > 0 && Dia < 29){this->Fevereiro = this->Dia;}else{this->Fevereiro = 28;}
+    if(Dia > 0 && Dia <= 28){this->Fevereiro = this->Dia;}else{this->Fevereiro = 28;}
     this->Marco = this->Dia;
-    if(Dia > 0 && Dia < 31){this->Abril = this->Dia;}else{this->Abril = 30;}
+    if(Dia > 0 && Dia <= 30){this->Abril = this->Dia;}else{this->Abril = 30;}
     this->Maio = this->Dia;
-    if(Dia > 0 && Dia < 31){this->Junho = this->Dia;}else{this->Junho = 30;}
+    if(Dia > 0 && Dia <= 30){this->Junho = this->Dia;}else{this->Junho = 30;}
     this->Julho = this->Dia;
     this->Agosto = this->Dia;
-    if(Dia > 0 && Dia < 31){this->Setembro = this->Dia;}else{this->Setembro = 30;}
+    if(Dia > 0 && Dia <= 30){this->Setembro = this->Dia;}else{this->Setembro = 30;}
     this->Outubro = this->Dia;
-    if(Dia > 0 && Dia < 31){this->Novembro = this->Dia;}else{this->Novembro = 30;}
+    if(Dia > 0 && Dia <= 30){this->Novembro = this->Dia;}else{this->Novembro = 30;}
     this->Dezembro = this->Dia;
 }
 
@@ -177,17 +177,17 @@ string Pagamentos::alteraParcela(string n, int d){
         if(d > 0 && d <= 31){
             this->Janeiro = d;
             }else{
-                this->Janeiro = 0;
-                return "Data inválida e não alterada com sucesso!";
+                this->Janeiro = 31;
+                return "Data inválida e alterada automaticamente para o último dia do mês!";
             }
     }
 
     if(n=="Fevereiro" || n=="fevereiro" || n=="FEVEREIRO"){
-       if(d > 0 && d < 29){
+       if(d > 0 && d <= 28){
             this->Fevereiro = d;
             }else{
-                this->Fevereiro = 0;
-                return "Data inválida e não alterada com sucesso!";
+                this->Fevereiro = 28;
+                return "Data inválida e alterada automaticamente para o último dia do mês!";
             }
     }
 
@@ -195,17 +195,17 @@ string Pagamentos::alteraParcela(string n, int d){
        if(d > 0 && d <=31){
             this->Marco = d;
             }else{
-                this->Marco = 0;
-                return "Data inválida e não alterada com sucesso!";
+                this->Marco = 31;
+                return "Data inválida e alterada automaticamente para o último dia do mês!";
             }
     }
 
     if(n=="Abril" || n=="abril" || n=="ABRIL"){
-       if(d > 0 && d < 31){
+       if(d > 0 && d <= 30){
             this->Abril = d;
             }else{
-                this->Abril = 0;
-                return "Data inválida e não alterada com sucesso!";
+                this->Abril = 30;
+                return "Data inválida e alterada automaticamente para o último dia do mês!";
             }
     }
 
@@ -213,17 +213,17 @@ string Pagamentos::alteraParcela(string n, int d){
        if(d > 0 && d <= 31){
             this->Maio = d;
             }else{
-                this->Maio = 0;
-                return "Data inválida e não alterada com sucesso!";
+                this->Maio = 31;
+                return "Data inválida e alterada automaticamente para o último dia do mês!";
             }
     }
 
     if(n=="Junho" || n=="junho" || n=="JUNHO"){
-       if(d > 0 && d < 31){
+       if(d > 0 && d <= 30){
             this->Junho = d;
             }else{
-                this->Junho = 0;
-                return "Data inválida e não alterada com sucesso!";
+                this->Junho = 30;
+                return "Data inválida e alterada automaticamente para o último dia do mês!";
             }
     }
 
@@ -231,8 +231,8 @@ string Pagamentos::alteraParcela(string n, int d){
        if(d > 0 && d <= 31){
             this->Julho = d;
             }else{
-                this->Julho = 0;
-                return "Data inválida e não alterada com sucesso!";
+                this->Julho = 31;
+                return "Data inválida e alterada automaticamente para o último dia do mês!";
             }
     }
 
@@ -240,17 +240,17 @@ string Pagamentos::alteraParcela(string n, int d){
        if(d > 0 && d <= 31){
             this->Agosto = d;
             }else{
-                this->Agosto = 0;
-                return "Data inválida e não alterada com sucesso!";
+                this->Agosto = 31;
+                return "Data inválida e alterada automaticamente para o último dia do mês!";
             }
     }
 
     if(n=="Setembro" || n=="setembro" || n=="SETEMBRO"){
-       if(d > 0 && d < 31){
+       if(d > 0 && d <= 30){
             this->Setembro = d;
             }else{
-                this->Setembro = 0;
-                return "Data inválida e não alterada com sucesso!";
+                this->Setembro = 30;
+                return "Data inválida e alterada automaticamente para o último dia do mês!";
             }
     }
 
@@ -258,17 +258,17 @@ string Pagamentos::alteraParcela(string n, int d){
        if(d > 0 && d <= 31){
             this->Outubro = d;
             }else{
-                this->Outubro = 0;
-                return "Data inválida e não alterada com sucesso!";
+                this->Outubro = 31;
+                return "Data inválida e alterada automaticamente para o último dia do mês!";
             }
     }
 
     if(n=="Novembro" || n=="novembro" || n=="NOVEMBRO"){
-       if(d > 0 && d < 31){
+       if(d > 0 && d <= 30){
             this->Novembro = d;
             }else{
-                this->Novembro = 0;
-                return "Data inválida e não alterada com sucesso!";
+                this->Novembro = 30;
+                return "Data inválida e alterada automaticamente para o último dia do mês!";
             }
     }
 
@@ -276,8 +276,8 @@ string Pagamentos::alteraParcela(string n, int d){
        if(d > 0 && d <= 31){
             this->Dezembro = d;
             }else{
-                this->Dezembro = 0;
-                return "Data inválida e não alterada com sucesso!";
+                this->Dezembro = 31;
+                return "Data inválida e alterada automaticamente para o último dia do mês!";
             }
     }
 

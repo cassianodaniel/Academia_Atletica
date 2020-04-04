@@ -21,11 +21,10 @@ SistemaAlunos *manager = new SistemaAlunos();
             cout << "2: Editar cadastro de aluno." << endl;
             cout << "3: Cadastrar novo pagamento." << endl;
             cout << "4: Cancelar pagamento." << endl;
-            cout << "5: Cadastrar novo pagamento." << endl;
-            cout << "6: Consultar situação de aluno." << endl;
-            cout << "7: Visualizar todos os alunos cadastrados." << endl;
-            cout << "8: Remover aluno cadastrado." << endl;
-            cout << "9: Fechar programa e salvar alterações/dados.\n" << endl;
+            cout << "5: Consultar situação de aluno." << endl;
+            cout << "6: Visualizar todos os alunos cadastrados." << endl;
+            cout << "7: Remover aluno cadastrado." << endl;
+            cout << "8: Fechar programa e salvar alterações/dados.\n" << endl;
             cout << ("Atenção! Apenas saia do programa utilizando o comando sair!\n\n");
     cin >> menu;
     cin.ignore();
@@ -85,24 +84,27 @@ SistemaAlunos *manager = new SistemaAlunos();
                 manager->pagto();
                 break;
             case 4:{
+                manager->cancelaPagto();
                 break;
             }
             case 5:{
-                break;
-            }
-            case 6:{
                 manager->consultaAluno();
                 break;
             }
-            case 7:{
+            case 6:{
                 cout << "Para consultar todos os alunos, aperte ENTER, quando for solicitado o nome do aluno." << endl;
                 manager->consultaAluno();
                 break;
             }
-            case 8:{
-                //remover aluno cadastrado
+            case 7:{
+                manager->consultaAluno();
+                cout << "Por favor, digite o CPF do aluno que será removido." << endl;
+                string c;
+                cin >> c;
+                manager->removeAluno(c);
+                break;
             }
-            case 9:{
+            case 8:{
                 //salvamento de arquivo
                 return 0;
             }
@@ -110,33 +112,26 @@ SistemaAlunos *manager = new SistemaAlunos();
                 break;
             }
     }
+
 /*
     SistemaAlunos *manager = new SistemaAlunos();
-
     Aluno *a1 = new Aluno("Daniel Cassiano", "417596", "Borborema", "Rua Aderaldo Silveira de Souza", "998354294");
     a1->setPagamento(20,03,2020);
     a1->geraParcelas();
-
     Aluno *a2 = new Aluno("Antônio Cassiano", "456654", "Borborema", "Rua Aderaldo Silveira de Souza", "998354294");
     a2->setPagamento(31,03,2020);
     a2->geraParcelas();
-
     Aluno *a3 = new Aluno("Auricélia Moura", "43212", "Serraria", "Rua Aderaldo Silveira de Souza", "998354294");
     a3->setPagamento(10,02,2020);
     a3->geraParcelas();
-
     manager->cadastraAluno(a1);
     manager->cadastraAluno(a2);
     manager->cadastraAluno(a3);
-
     manager->visualizarAlunos();
     manager->consultaAluno();
-
     manager->pagto();
     manager->consultaAluno();
-
     manager->cancelaPagto();
-
     manager->consultaAluno();
 */
     return 0;
