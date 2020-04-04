@@ -53,17 +53,17 @@ SistemaAlunos *manager = new SistemaAlunos();
                 system("cls");
                 Aluno *a1 = new Aluno(nome, cpf, cidade, endereco, telefone);
 
-                cout << "Por favor, digite APENAS O DIA (DOIS DÍGITOS) do primeiro pagamento do aluno (dia que as parcelas serão geradas)" << endl;
+                cout << "Por favor, digite apenas o dia (DOIS DÍGITOS) do primeiro pagamento \n do aluno (dia que as parcelas serão geradas)\n" << endl;
                 int dia;
                 cin >> dia;
                 cin.ignore();
                 system("cls");
-                cout << "Por favor, digite APENAS O MÊS (DOIS DÍGITOS) do primeiro pagamento do aluno." << endl;
+                cout << "Por favor, digite apenas o mês (DOIS DÍGITOS) do primeiro pagamento do aluno.\n" << endl;
                 int mes;
                 cin >> mes;
                 cin.ignore();
                 system("cls");
-                cout << "Por favor, digite APENAS O ANO (QUATRO DÍGITOS) do primeiro pagamento do aluno." << endl;
+                cout << "Por favor, digite apenas o ano (QUATRO DÍGITOS) do primeiro pagamento do aluno.\n" << endl;
                 int ano;
                 cin >> ano;
                 cin.ignore();
@@ -77,6 +77,11 @@ SistemaAlunos *manager = new SistemaAlunos();
                 }
                 break;
             case 2:{
+                manager->consultaAluno();
+                cout << "Por favor, digite o CPF do aluno que será editado.\n" << endl;
+                string c;
+                cin >> c;
+                manager->editaAluno(c);
                 break;
             }
             case 3:
@@ -84,6 +89,7 @@ SistemaAlunos *manager = new SistemaAlunos();
                 manager->pagto();
                 break;
             case 4:{
+                manager->consultaAluno();
                 manager->cancelaPagto();
                 break;
             }
@@ -92,7 +98,7 @@ SistemaAlunos *manager = new SistemaAlunos();
                 break;
             }
             case 6:{
-                cout << "Para consultar todos os alunos, aperte ENTER, quando for solicitado o nome do aluno." << endl;
+                cout << "Para consultar todos os alunos, aperte ENTER." << endl;
                 manager->consultaAluno();
                 break;
             }

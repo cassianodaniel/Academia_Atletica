@@ -12,6 +12,7 @@ class SistemaAlunos : public Aluno
         void consultaAluno();
         void cadastraAluno(Aluno *al);
         void removeAluno(string c);
+        void editaAluno(string c);
         void pagto();
         void cancelaPagto();
 

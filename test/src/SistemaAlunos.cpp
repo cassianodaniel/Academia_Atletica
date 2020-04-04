@@ -33,7 +33,7 @@ void SistemaAlunos::cadastraAluno(Aluno *al){
 }
 
 void SistemaAlunos::consultaAluno(){
-    cout << "Por favor, digite o NOME do aluno desejado para consulta." << endl;
+    cout << "Por favor, digite o NOME do aluno desejado para ser consultado." << endl;
     string n;
     getline(cin, n);
     system("cls");
@@ -176,7 +176,7 @@ void SistemaAlunos::pagto(){
                     alunos[i].Dezembro = data;
                     alunos[i].DezembroPago = true;
                 }
-                cout << "Pagamento efetuado com sucesso!" << endl;
+                cout << "Pagamento efetuado com sucesso!\n" << endl;
                 cin.ignore();
             }
         }
@@ -265,7 +265,7 @@ void SistemaAlunos::cancelaPagto(){
                 if(mes=="Dezembro" || mes=="dezembro" || mes=="DEZEMBRO"){
                     alunos[i].DezembroPago = false;
                 }
-                cout << "Remoção de pagamento efetuado com sucesso!" << endl;
+                cout << "Remoção de pagamento efetuado com sucesso! \n" << endl;
                 cin.ignore();
             }
         }
@@ -287,6 +287,101 @@ void SistemaAlunos::removeAluno(string c){
             if(j == 2){
                 alunos[i].ativo = true;
                 cout << "Aluno " << alunos[i].nome << " não removido!" << endl;
+                cout << "Operação cancelada.\n" << endl;
+            }
+        }
+    }
+}
+
+void SistemaAlunos::editaAluno(string c){
+    for(unsigned int i=0; i < alunos.size(); i++){
+        if(alunos[i].cpf == c){
+            cout << "Você deseja editar o aluno " << alunos[i].nome << "?\n" << endl;
+            cout << "1. SIM" << endl;
+            cout << "2. NÃO \n" << endl;
+            int j;
+            cin >> j;
+            if(j == 1){
+                system("cls");
+                cout << "1. Editar nome\n" << endl;
+                cout << "2. Editar cidade\n" << endl;
+                cout << "3. Editar endereço\n" << endl;
+                cout << "4. Editar telefone\n" << endl;
+                cout << "5. Editar CPF\n" << endl;
+                int k;
+                cin >> k;
+                cin.ignore();
+                switch(k){
+                    case 1:{
+                        system("cls");
+                        cout << "Por favor, digite o novo nome:\n" << endl;
+                        string n;
+                        getline(cin, n);
+                        alunos[i].nome = n;
+                        if(alunos[i].nome == n){
+                            cout << "Nome alterado com sucesso!\n" << endl;
+                        }else{
+                            cout << "Erro em alterar o nome do aluno." << endl;
+                        }
+                    }
+                    break;
+                    case 2:{
+                        system("cls");
+                        cout << "Por favor, digite a nova cidade:\n" << endl;
+                        string c;
+                        getline(cin, c);
+                        alunos[i].cidade = c;;
+                        if(alunos[i].cidade == c){
+                            cout << "Cidade alterada com sucesso!\n" << endl;
+                        }else{
+                            cout << "Erro em alterar cidade do aluno." << endl;
+                        }
+                    }
+                    break;
+                    case 3:{
+                        system("cls");
+                        cout << "Por favor, digite o novo endereço:\n" << endl;
+                        string e;
+                        getline(cin, e);
+                        alunos[i].endereco = e;
+                        if(alunos[i].endereco == e){
+                            cout << "Endereco alterado com sucesso!\n" << endl;
+                        }else{
+                            cout << "Erro em alterar o endereco do aluno." << endl;
+                        }
+                    }
+                    break;
+                    case 4:{
+                        system("cls");
+                        cout << "Por favor, digite o novo telefone:\n" << endl;
+                        string t;
+                        getline(cin, t);
+                        alunos[i].telefone = t;
+                        if(alunos[i].telefone == t){
+                            cout << "Telefone alterado com sucesso!\n" << endl;
+                        }else{
+                            cout << "Erro em alterar o novo telefone do aluno." << endl;
+                        }
+                    }
+                    break;
+                    case 5:{
+                        system("cls");
+                        cout << "Por favor, digite o novo CPF:\n" << endl;
+                        string cp;
+                        getline(cin, cp);
+                        alunos[i].cpf = cp;
+                        if(alunos[i].cpf == cp){
+                            cout << "CPF alterado com sucesso!\n" << endl;
+                        }else{
+                            cout << "Erro em alterar o CPF do aluno." << endl;
+                        }
+                    }
+                    break;
+                }
+            }
+            if(j == 2){
+                system("cls");
+                cout << "Aluno " << alunos[i].nome << " não editado!" << endl;
                 cout << "Operação cancelada.\n" << endl;
             }
         }

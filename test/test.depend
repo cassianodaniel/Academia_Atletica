@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1586033233 source:c:\users\edgelson\desktop\academia atletica software\test\main.cpp
+1586040284 source:c:\users\edgelson\desktop\academia atletica software\test\main.cpp
 	<stdio.h>
 	<stdlib.h>
 	<iostream>
@@ -37,7 +37,7 @@
 	"Pagamentos.h"
 	<iostream>
 
-1586033025 source:c:\users\edgelson\desktop\academia atletica software\test\src\sistemaalunos.cpp
+1586041143 source:c:\users\edgelson\desktop\academia atletica software\test\src\sistemaalunos.cpp
 	"SistemaAlunos.h"
 	<iostream>
 	"stdio.h"
@@ -45,6 +45,6 @@
 	<algorithm>
 	<vector>
 
-1585934249 c:\users\edgelson\desktop\academia atletica software\test\include\sistemaalunos.h
+1586039250 c:\users\edgelson\desktop\academia atletica software\test\include\sistemaalunos.h
 	"Aluno.h"
 
