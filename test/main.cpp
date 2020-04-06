@@ -26,9 +26,10 @@ bool JaneiroPago2,FevereiroPago2,MarcoPago2,AbrilPago2,MaioPago2,JunhoPago2,Julh
 ifstream arquivo;
 arquivo.open("academia.txt");
 
-while(arquivo.eof()){
+while(!arquivo.eof()){
         Aluno *p = new Aluno();
         Dados dados = Dados();
+        Pagamentos pagamentos = Pagamentos();
 
         //________________________VARIÁVEIS MÊS
 
@@ -154,10 +155,11 @@ while(arquivo.eof()){
         //_____________________________
 
         manager->alunos.push_back(*p);
-        arquivo.close();
 }
+arquivo.close();
+
     int menu = 0;
-    while(menu != 1){ //while infinito
+    while(menu != 9){
             cout << "Bem-vindo ao programa de gerenciamento da Academia Atlética!" << endl;
             cout << "Por favor, digite a opção desejada:" << endl;
             cout << "1: Cadastrar novo aluno." << endl;
@@ -260,6 +262,7 @@ while(arquivo.eof()){
                     if(!manager->alunos[i].ativo){
                         continue;
                     }
+
                     arquivo << manager->alunos[i].Janeiro << endl;
                     arquivo << manager->alunos[i].Fevereiro << endl;
                     arquivo << manager->alunos[i].Marco << endl;
@@ -299,6 +302,8 @@ while(arquivo.eof()){
                     arquivo << manager->alunos[i].cidade  << endl;
                     arquivo << manager->alunos[i].endereco  << endl;
                     arquivo << manager->alunos[i].telefone  << endl;
+
+                    //arquivo << ((Terreno *)sist.imovs[i])->area << endl;
 
                     arquivo.close();
                     return 0;
