@@ -157,7 +157,7 @@ while(arquivo.eof()){
         arquivo.close();
 }
     int menu = 0;
-    while(menu != 9){
+    while(menu != 1){ //while infinito
             cout << "Bem-vindo ao programa de gerenciamento da Academia Atlética!" << endl;
             cout << "Por favor, digite a opção desejada:" << endl;
             cout << "1: Cadastrar novo aluno." << endl;
@@ -260,7 +260,6 @@ while(arquivo.eof()){
                     if(!manager->alunos[i].ativo){
                         continue;
                     }
-
                     arquivo << manager->alunos[i].Janeiro << endl;
                     arquivo << manager->alunos[i].Fevereiro << endl;
                     arquivo << manager->alunos[i].Marco << endl;
@@ -300,8 +299,6 @@ while(arquivo.eof()){
                     arquivo << manager->alunos[i].cidade  << endl;
                     arquivo << manager->alunos[i].endereco  << endl;
                     arquivo << manager->alunos[i].telefone  << endl;
-
-                    //arquivo << ((Terreno *)sist.imovs[i])->area << endl;
 
                     arquivo.close();
                     return 0;
