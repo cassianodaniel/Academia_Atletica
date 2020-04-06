@@ -23,13 +23,59 @@ int Janeiro2, Fevereiro2, Marco2, Abril2, Maio2, Junho2, Julho2, Agosto2, Setemb
 int DiaOriginal2, MesOriginal2, AnoOriginal2; //pagamentos.h
 bool JaneiroPago2,FevereiroPago2,MarcoPago2,AbrilPago2,MaioPago2,JunhoPago2,JulhoPago2,AgostoPago2,SetembroPago2,OutubroPago2,NovembroPago2,DezembroPago2; //pagamentos.h
 
+
 ifstream arquivo;
 arquivo.open("academia.txt");
 
 while(!arquivo.eof()){
         Aluno *p = new Aluno();
         Dados dados = Dados();
-        Pagamentos pagamentos = Pagamentos();
+        p->geraParcelas();
+
+        //_____________________________VARIÁVEIS ENDERECO e ATIVO (DADOS)
+
+        arquivo >> Ativo2;
+        arquivo.ignore();
+        p->ativo = Ativo2;
+
+        arquivo >> nome2;
+        p->nome = nome2;
+
+        arquivo >> cpf2;
+        p->cpf = cpf2;
+
+        arquivo >> cidade2;
+        p->cidade = cidade2;
+
+        arquivo >> endereco2;
+        p->endereco = endereco2;
+
+        arquivo >> telefone2;
+        p->telefone = telefone2;
+
+        //__________________________VARIÁVEIS DATA e DATA ORIGINAL
+
+        arquivo >> Ano2;
+        p->setAno(Ano2);
+
+        arquivo >> AnoOriginal2;
+        p->AnoOriginal = AnoOriginal2;
+
+        arquivo >> Mes2;
+        arquivo.ignore();
+        p->setMes(Mes2);
+
+        arquivo >> MesOriginal2;
+        arquivo.ignore();
+        p->MesOriginal = MesOriginal2;
+
+        arquivo >> Dia2;
+        arquivo.ignore();
+        p->Dia = Dia2;
+
+        arquivo >> DiaOriginal2;
+        arquivo.ignore();
+        p->DiaOriginal = DiaOriginal2;
 
         //________________________VARIÁVEIS MÊS
 
@@ -107,56 +153,12 @@ while(!arquivo.eof()){
         arquivo >> DezembroPago2;
         p->Dezembro = DezembroPago2;
 
-        //__________________________VARIÁVEIS DATA e DATA ORIGINAL
-
-        arquivo >> Ano2;
-        p->setAno(Ano2);
-
-        arquivo >> AnoOriginal2;
-        p->AnoOriginal = AnoOriginal2;
-
-        arquivo >> Mes2;
-        arquivo.ignore();
-        p->setMes(Mes2);
-
-        arquivo >> MesOriginal2;
-        arquivo.ignore();
-        p->MesOriginal = MesOriginal2;
-
-        arquivo >> Dia2;
-        arquivo.ignore();
-        p->Dia = Dia2;
-
-        arquivo >> DiaOriginal2;
-        arquivo.ignore();
-        p->DiaOriginal = DiaOriginal2;
-
-        //_____________________________VARIÁVEIS ENDERECO e ATIVO (DADOS)
-
-        arquivo >> Ativo2;
-        arquivo.ignore();
-        p->ativo = Ativo2;
-
-        arquivo >> nome2;
-        p->nome = nome2;
-
-        arquivo >> cpf2;
-        p->cpf = cpf2;
-
-        arquivo >> cidade2;
-        p->cidade = cidade2;
-
-        arquivo >> endereco2;
-        p->endereco = endereco2;
-
-        arquivo >> telefone2;
-        p->telefone = telefone2;
-
         //_____________________________
 
-        manager->alunos.push_back(*p);
-}
+        manager->alunos.push_back(p);
+    }
 arquivo.close();
+
 
     int menu = 0;
     while(menu != 9){
@@ -258,56 +260,55 @@ arquivo.close();
             case 8:{
                 fstream arquivo;
                 arquivo.open("academia.txt",  ios::out | ios::trunc);
-                for(int i=0; manager->alunos.size(); i++){
-                    if(!manager->alunos[i].ativo){
+                for(unsigned int i=0; manager->alunos.size(); i++){
+
+                    if(!manager->alunos[i]->ativo){
                         continue;
                     }
 
-                    arquivo << manager->alunos[i].Janeiro << endl;
-                    arquivo << manager->alunos[i].Fevereiro << endl;
-                    arquivo << manager->alunos[i].Marco << endl;
-                    arquivo << manager->alunos[i].Abril << endl;
-                    arquivo << manager->alunos[i].Maio << endl;
-                    arquivo << manager->alunos[i].Junho << endl;
-                    arquivo << manager->alunos[i].Julho << endl;
-                    arquivo << manager->alunos[i].Agosto << endl;
-                    arquivo << manager->alunos[i].Setembro << endl;
-                    arquivo << manager->alunos[i].Outubro << endl;
-                    arquivo << manager->alunos[i].Novembro << endl;
-                    arquivo << manager->alunos[i].Dezembro << endl;
+                    arquivo << manager->alunos[i]->ativo  << endl;
+                    arquivo << manager->alunos[i]->nome  << endl;
+                    arquivo << manager->alunos[i]->cpf  << endl;
+                    arquivo << manager->alunos[i]->cidade  << endl;
+                    arquivo << manager->alunos[i]->endereco  << endl;
+                    arquivo << manager->alunos[i]->telefone  << endl;
 
-                    arquivo << manager->alunos[i].JaneiroPago << endl;
-                    arquivo << manager->alunos[i].FevereiroPago << endl;
-                    arquivo << manager->alunos[i].MarcoPago << endl;
-                    arquivo << manager->alunos[i].AbrilPago << endl;
-                    arquivo << manager->alunos[i].MaioPago << endl;
-                    arquivo << manager->alunos[i].JunhoPago << endl;
-                    arquivo << manager->alunos[i].JulhoPago << endl;
-                    arquivo << manager->alunos[i].AgostoPago << endl;
-                    arquivo << manager->alunos[i].SetembroPago << endl;
-                    arquivo << manager->alunos[i].OutubroPago << endl;
-                    arquivo << manager->alunos[i].NovembroPago << endl;
-                    arquivo << manager->alunos[i].DezembroPago  << endl;
+                    arquivo << manager->alunos[i]->Ano  << endl;
+                    arquivo << manager->alunos[i]->AnoOriginal  << endl;
+                    arquivo << manager->alunos[i]->Mes  << endl;
+                    arquivo << manager->alunos[i]->MesOriginal  << endl;
+                    arquivo << manager->alunos[i]->Dia  << endl;
+                    arquivo << manager->alunos[i]->DiaOriginal  << endl;
 
-                    arquivo << manager->alunos[i].Ano  << endl;
-                    arquivo << manager->alunos[i].AnoOriginal  << endl;
-                    arquivo << manager->alunos[i].Mes  << endl;
-                    arquivo << manager->alunos[i].MesOriginal  << endl;
-                    arquivo << manager->alunos[i].Dia  << endl;
-                    arquivo << manager->alunos[i].DiaOriginal  << endl;
+                    arquivo << manager->alunos[i]->Janeiro << endl;
+                    arquivo << manager->alunos[i]->Fevereiro << endl;
+                    arquivo << manager->alunos[i]->Marco << endl;
+                    arquivo << manager->alunos[i]->Abril << endl;
+                    arquivo << manager->alunos[i]->Maio << endl;
+                    arquivo << manager->alunos[i]->Junho << endl;
+                    arquivo << manager->alunos[i]->Julho << endl;
+                    arquivo << manager->alunos[i]->Agosto << endl;
+                    arquivo << manager->alunos[i]->Setembro << endl;
+                    arquivo << manager->alunos[i]->Outubro << endl;
+                    arquivo << manager->alunos[i]->Novembro << endl;
+                    arquivo << manager->alunos[i]->Dezembro << endl;
 
-                    arquivo << manager->alunos[i].ativo  << endl;
-                    arquivo << manager->alunos[i].nome  << endl;
-                    arquivo << manager->alunos[i].cpf  << endl;
-                    arquivo << manager->alunos[i].cidade  << endl;
-                    arquivo << manager->alunos[i].endereco  << endl;
-                    arquivo << manager->alunos[i].telefone  << endl;
-
-                    //arquivo << ((Terreno *)sist.imovs[i])->area << endl;
+                    arquivo << manager->alunos[i]->JaneiroPago << endl;
+                    arquivo << manager->alunos[i]->FevereiroPago << endl;
+                    arquivo << manager->alunos[i]->MarcoPago << endl;
+                    arquivo << manager->alunos[i]->AbrilPago << endl;
+                    arquivo << manager->alunos[i]->MaioPago << endl;
+                    arquivo << manager->alunos[i]->JunhoPago << endl;
+                    arquivo << manager->alunos[i]->JulhoPago << endl;
+                    arquivo << manager->alunos[i]->AgostoPago << endl;
+                    arquivo << manager->alunos[i]->SetembroPago << endl;
+                    arquivo << manager->alunos[i]->OutubroPago << endl;
+                    arquivo << manager->alunos[i]->NovembroPago << endl;
+                    arquivo << manager->alunos[i]->DezembroPago  << endl;
 
                     arquivo.close();
+                    }
                     return 0;
-                }
             }
             default:
                 break;
