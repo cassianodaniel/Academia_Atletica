@@ -35,7 +35,6 @@ while(!arquivo.eof()){
         //_____________________________VARIÁVEIS ENDERECO e ATIVO (DADOS)
 
         arquivo >> Ativo2;
-        arquivo.ignore();
         p->ativo = Ativo2;
 
         arquivo >> nome2;
@@ -56,9 +55,11 @@ while(!arquivo.eof()){
         //__________________________VARIÁVEIS DATA e DATA ORIGINAL
 
         arquivo >> Ano2;
-        p->setAno(Ano2);
+        arquivo.ignore();
+        p->Ano = Ano2;
 
         arquivo >> AnoOriginal2;
+        arquivo.ignore();
         p->AnoOriginal = AnoOriginal2;
 
         arquivo >> Mes2;
@@ -80,39 +81,51 @@ while(!arquivo.eof()){
         //________________________VARIÁVEIS MÊS
 
         arquivo >> Janeiro2;
+        arquivo.ignore();
         p->Janeiro = Janeiro2;
 
         arquivo >> Fevereiro2;
+        arquivo.ignore();
         p->Fevereiro = Fevereiro2;
 
         arquivo >> Marco2;
+        arquivo.ignore();
         p->Marco = Marco2;
 
         arquivo >> Abril2;
+        arquivo.ignore();
         p->Abril = Abril2;
 
         arquivo >> Maio2;
+        arquivo.ignore();
         p->Maio = Maio2;
 
         arquivo >> Junho2;
+        arquivo.ignore();
         p->Junho = Junho2;
 
         arquivo >> Julho2;
+        arquivo.ignore();
         p->Julho = Julho2;
 
         arquivo >> Agosto2;
+        arquivo.ignore();
         p->Agosto = Agosto2;
 
         arquivo >> Setembro2;
+        arquivo.ignore();
         p->Setembro = Setembro2;
 
         arquivo >> Outubro2;
+        arquivo.ignore();
         p->Outubro = Outubro2;
 
         arquivo >> Novembro2;
+        arquivo.ignore();
         p->Novembro = Novembro2;
 
         arquivo >> Dezembro2;
+        arquivo.ignore();
         p->Dezembro = Dezembro2;
 
         //___________________________ VARIÁVEIS MÊS PAGOS
