@@ -27,6 +27,7 @@ bool JaneiroPago2,FevereiroPago2,MarcoPago2,AbrilPago2,MaioPago2,JunhoPago2,Julh
 ifstream arquivo;
 arquivo.open("academia.txt");
 
+//LEITURA DE ARQUIVO
 while(!arquivo.eof()){
         Aluno *p = new Aluno();
         Dados dados = Dados();
@@ -35,109 +36,100 @@ while(!arquivo.eof()){
         //p->geraParcelas();
         //p->setPagamento(Dia2,Mes2,Ano2);
 
-        
-        //Se eu usar os getlines(arquivo, variavel), após uma nova escrita, na leitura, não é possível abrir o programa, portanto
-        //onde está comentado os getlines, troquei pelos adders >> e o programa consegue ser lido, porém, incorretamente.
-        
         //_____________________________VARIÁVEIS ENDERECO e ATIVO (DADOS)
 
         arquivo >> Ativo2;
         p->ativo = Ativo2;
 
-        //getline(arquivo, nome2);
-        arquivo >> nome2;
+        getline(arquivo, nome2);
         p->nome = nome2;
 
-        //getline(arquivo, cpf2);
-        arquivo >> cpf2;
+        getline(arquivo, cpf2);
         p->cpf = cpf2;
 
-        //getline(arquivo,cidade2);
-        arquivo >> cidade2;
+        getline(arquivo,cidade2);
         p->cidade = cidade2;
 
-        //getline(arquivo, endereco2);
-        arquivo >> endereco2;
+        getline(arquivo, endereco2);
         p->endereco = endereco2;
 
-        //getline(arquivo, telefone2);
-        arquivo >> telefone2;
+        getline(arquivo, telefone2);
         p->telefone = telefone2;
 
         //__________________________VARIÁVEIS DATA e DATA ORIGINAL
 
         arquivo >> Ano2;
-        //arquivo.ignore();
+
         p->Ano = Ano2;
 
         arquivo >> AnoOriginal2;
-        //arquivo.ignore();
+
         p->AnoOriginal = AnoOriginal2;
 
         arquivo >> Mes2;
-        //arquivo.ignore();
+
         p->setMes(Mes2);
 
         arquivo >> MesOriginal2;
-        //arquivo.ignore();
+
         p->MesOriginal = MesOriginal2;
 
         arquivo >> Dia2;
-        //arquivo.ignore();
+
         p->Dia = Dia2;
 
         arquivo >> DiaOriginal2;
-        //arquivo.ignore();
+
         p->DiaOriginal = DiaOriginal2;
 
         //________________________VARIÁVEIS MÊS
 
         arquivo >> Janeiro2;
-        //arquivo.ignore();
+
         p->Janeiro = Janeiro2;
 
         arquivo >> Fevereiro2;
-        //arquivo.ignore();
+
         p->Fevereiro = Fevereiro2;
 
         arquivo >> Marco2;
-        //arquivo.ignore();
+
         p->Marco = Marco2;
 
         arquivo >> Abril2;
-        //arquivo.ignore();
+
         p->Abril = Abril2;
 
         arquivo >> Maio2;
-        //arquivo.ignore();
+
         p->Maio = Maio2;
 
         arquivo >> Junho2;
-        //arquivo.ignore();
+
         p->Junho = Junho2;
 
         arquivo >> Julho2;
-        //arquivo.ignore();
+
         p->Julho = Julho2;
 
         arquivo >> Agosto2;
-        //arquivo.ignore();
+
         p->Agosto = Agosto2;
 
         arquivo >> Setembro2;
-        //arquivo.ignore();
+
         p->Setembro = Setembro2;
 
         arquivo >> Outubro2;
-        //arquivo.ignore();
+
         p->Outubro = Outubro2;
 
         arquivo >> Novembro2;
-        //arquivo.ignore();
+
         p->Novembro = Novembro2;
 
         arquivo >> Dezembro2;
-        //arquivo.ignore();
+
         p->Dezembro = Dezembro2;
 
         //___________________________ VARIÁVEIS MÊS PAGOS
@@ -330,10 +322,9 @@ arquivo.close();
                     arquivo << manager->alunos[i]->OutubroPago << endl;
                     arquivo << manager->alunos[i]->NovembroPago << endl;
                     arquivo << manager->alunos[i]->DezembroPago  << endl;
-
-                    arquivo.close();
                     }
-                    return 0;
+                    arquivo.close();
+                    return 1;
             }
             default:
                 break;
