@@ -26,11 +26,11 @@ bool JaneiroPago2,FevereiroPago2,MarcoPago2,AbrilPago2,MaioPago2,JunhoPago2,Julh
 
 ifstream arquivo;
 arquivo.open("academia.txt");
-int constante = 1;
-Aluno *p = new Aluno();
-Dados dados = Dados();
+
 //LEITURA DE ARQUIVO
 while(!arquivo.eof()){
+        Aluno *p = new Aluno();
+        Dados dados = Dados();
 
         arquivo >> Ativo2;
         p->ativo = Ativo2;
