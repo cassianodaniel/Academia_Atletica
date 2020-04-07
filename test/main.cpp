@@ -30,26 +30,29 @@ arquivo.open("academia.txt");
 while(!arquivo.eof()){
         Aluno *p = new Aluno();
         Dados dados = Dados();
-        p->geraParcelas();
+
+        //Preciso fazer isso?
+        //p->geraParcelas();
+        //p->setPagamento(Dia2,Mes2,Ano2);
 
         //_____________________________VARIÁVEIS ENDERECO e ATIVO (DADOS)
 
         arquivo >> Ativo2;
         p->ativo = Ativo2;
 
-        arquivo >> nome2;
+        getline(arquivo, nome2);
         p->nome = nome2;
 
-        arquivo >> cpf2;
+        getline(arquivo, cpf2);
         p->cpf = cpf2;
 
-        arquivo >> cidade2;
+        getline(arquivo,cidade2);
         p->cidade = cidade2;
 
-        arquivo >> endereco2;
+        getline(arquivo, endereco2);
         p->endereco = endereco2;
 
-        arquivo >> telefone2;
+        getline(arquivo, telefone2);
         p->telefone = telefone2;
 
         //__________________________VARIÁVEIS DATA e DATA ORIGINAL
