@@ -277,7 +277,7 @@ arquivo.close();
             case 8:{
                 fstream arquivo;
                 arquivo.open("academia.txt",  ios::out | ios::trunc);
-                for(unsigned int i=0; manager->alunos.size(); i++){
+                for(unsigned int i=0; i < manager->alunos.size(); i++){
 
                     if(!manager->alunos[i]->ativo){
                         continue;
