@@ -35,14 +35,12 @@ while(1){
 
         arquivo >> Ativo2;
         p->ativo = Ativo2;
-        cout << Ativo2;
 
         //_____________________________VARIÁVEIS ENDERECO e ATIVO (DADOS)
 
 
         getline(arquivo, nome2);
         p->nome = nome2;
-        cout << nome2;
 
         getline(arquivo,cidade2);
         p->cidade = cidade2;
@@ -57,7 +55,6 @@ while(1){
         p->telefone = telefone2;
 
         //__________________________VARIÁVEIS DATA e DATA ORIGINAL
-
 
         arquivo >> Ano2;
 
@@ -170,6 +167,9 @@ while(1){
 
         arquivo >> DezembroPago2;
         p->Dezembro = DezembroPago2;
+
+        p->setPagamento(Dia2,Mes2,Ano2);
+        p->geraParcelas();
 
         manager->alunos.push_back(p);
 
@@ -295,13 +295,12 @@ arquivo.close();
                         if(!manager->alunos[i]->ativo){
                             continue;
                         }
-
-                        arquivo << (manager->alunos[i]->ativo)  << endl;
-                        arquivo << (manager->alunos[i]->nome)  << endl;
-                        arquivo << (manager->alunos[i]->cidade)  << endl;
-                        arquivo << (manager->alunos[i]->cpf)  << endl;
-                        arquivo << (manager->alunos[i]->endereco)  << endl;
-                        arquivo << (manager->alunos[i]->telefone)  << endl;
+                        arquivo << (manager->alunos[i]->ativo);
+                        arquivo << (manager->alunos[i]->nome) << endl;
+                        arquivo << (manager->alunos[i]->cidade) << endl;
+                        arquivo << (manager->alunos[i]->cpf) << endl;
+                        arquivo << (manager->alunos[i]->endereco) << endl;
+                        arquivo << (manager->alunos[i]->telefone) << endl;
 
                         arquivo << manager->alunos[i]->Ano  << endl;
                         arquivo << manager->alunos[i]->AnoOriginal  << endl;
