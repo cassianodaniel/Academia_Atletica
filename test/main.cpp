@@ -26,23 +26,22 @@ bool JaneiroPago2,FevereiroPago2,MarcoPago2,AbrilPago2,MaioPago2,JunhoPago2,Julh
 
 ifstream arquivo;
 arquivo.open("academia.txt");
-
+int constante = 1;
+Aluno *p = new Aluno();
+Dados dados = Dados();
 //LEITURA DE ARQUIVO
 while(!arquivo.eof()){
-        Aluno *p = new Aluno();
-        Dados dados = Dados();
-
-        //Preciso fazer isso?
-        //p->geraParcelas();
-        //p->setPagamento(Dia2,Mes2,Ano2);
-
-        //_____________________________VARIÁVEIS ENDERECO e ATIVO (DADOS)
 
         arquivo >> Ativo2;
         p->ativo = Ativo2;
+        cout << Ativo2;
+
+        //_____________________________VARIÁVEIS ENDERECO e ATIVO (DADOS)
+
 
         getline(arquivo, nome2);
         p->nome = nome2;
+        cout << nome2;
 
         getline(arquivo, cpf2);
         p->cpf = cpf2;
@@ -57,6 +56,7 @@ while(!arquivo.eof()){
         p->telefone = telefone2;
 
         //__________________________VARIÁVEIS DATA e DATA ORIGINAL
+
 
         arquivo >> Ano2;
 
@@ -173,7 +173,7 @@ while(!arquivo.eof()){
         //_____________________________
 
         manager->alunos.push_back(p);
-    }
+        }
 arquivo.close();
 
 
@@ -275,56 +275,66 @@ arquivo.close();
                 break;
             }
             case 8:{
-                fstream arquivo;
-                arquivo.open("academia.txt",  ios::out | ios::trunc);
-                for(unsigned int i=0; i < manager->alunos.size(); i++){
+                cout << "Você fez alguma alteracao de dados no sistema?\n" << endl;
+                cout << "1. SIM" << endl;
+                cout << "2. NÃO" << endl;
+                int aux;
+                cin >> aux;
+                cin.ignore();
+                    if(aux == 1){
+                    fstream arquivo;
+                    arquivo.open("academia.txt",  ios::out | ios::trunc);
+                    for(unsigned int i=0; i < manager->alunos.size(); i++){
 
-                    if(!manager->alunos[i]->ativo){
-                        continue;
+                        if(!manager->alunos[i]->ativo){
+                            continue;
+                        }
+
+                        arquivo << (manager->alunos[i]->ativo)  << endl;
+                        arquivo << (manager->alunos[i]->nome)  << endl;
+                        arquivo << (manager->alunos[i]->cidade)  << endl;
+                        arquivo << (manager->alunos[i]->cpf)  << endl;
+                        arquivo << (manager->alunos[i]->endereco)  << endl;
+                        arquivo << (manager->alunos[i]->telefone)  << endl;
+
+                        arquivo << manager->alunos[i]->Ano  << endl;
+                        arquivo << manager->alunos[i]->AnoOriginal  << endl;
+                        arquivo << manager->alunos[i]->Mes  << endl;
+                        arquivo << manager->alunos[i]->MesOriginal  << endl;
+                        arquivo << manager->alunos[i]->Dia  << endl;
+                        arquivo << manager->alunos[i]->DiaOriginal  << endl;
+
+                        arquivo << manager->alunos[i]->Janeiro << endl;
+                        arquivo << manager->alunos[i]->Fevereiro << endl;
+                        arquivo << manager->alunos[i]->Marco << endl;
+                        arquivo << manager->alunos[i]->Abril << endl;
+                        arquivo << manager->alunos[i]->Maio << endl;
+                        arquivo << manager->alunos[i]->Junho << endl;
+                        arquivo << manager->alunos[i]->Julho << endl;
+                        arquivo << manager->alunos[i]->Agosto << endl;
+                        arquivo << manager->alunos[i]->Setembro << endl;
+                        arquivo << manager->alunos[i]->Outubro << endl;
+                        arquivo << manager->alunos[i]->Novembro << endl;
+                        arquivo << manager->alunos[i]->Dezembro << endl;
+
+                        arquivo << manager->alunos[i]->JaneiroPago << endl;
+                        arquivo << manager->alunos[i]->FevereiroPago << endl;
+                        arquivo << manager->alunos[i]->MarcoPago << endl;
+                        arquivo << manager->alunos[i]->AbrilPago << endl;
+                        arquivo << manager->alunos[i]->MaioPago << endl;
+                        arquivo << manager->alunos[i]->JunhoPago << endl;
+                        arquivo << manager->alunos[i]->JulhoPago << endl;
+                        arquivo << manager->alunos[i]->AgostoPago << endl;
+                        arquivo << manager->alunos[i]->SetembroPago << endl;
+                        arquivo << manager->alunos[i]->OutubroPago << endl;
+                        arquivo << manager->alunos[i]->NovembroPago << endl;
+                        arquivo << manager->alunos[i]->DezembroPago  << endl;
+                        }
+                        arquivo.close();
+                        return 1;
+                    }else{
+                        return 0;
                     }
-
-                    arquivo << manager->alunos[i]->ativo  << endl;
-                    arquivo << manager->alunos[i]->nome  << endl;
-                    arquivo << manager->alunos[i]->cpf  << endl;
-                    arquivo << manager->alunos[i]->cidade  << endl;
-                    arquivo << manager->alunos[i]->endereco  << endl;
-                    arquivo << manager->alunos[i]->telefone  << endl;
-
-                    arquivo << manager->alunos[i]->Ano  << endl;
-                    arquivo << manager->alunos[i]->AnoOriginal  << endl;
-                    arquivo << manager->alunos[i]->Mes  << endl;
-                    arquivo << manager->alunos[i]->MesOriginal  << endl;
-                    arquivo << manager->alunos[i]->Dia  << endl;
-                    arquivo << manager->alunos[i]->DiaOriginal  << endl;
-
-                    arquivo << manager->alunos[i]->Janeiro << endl;
-                    arquivo << manager->alunos[i]->Fevereiro << endl;
-                    arquivo << manager->alunos[i]->Marco << endl;
-                    arquivo << manager->alunos[i]->Abril << endl;
-                    arquivo << manager->alunos[i]->Maio << endl;
-                    arquivo << manager->alunos[i]->Junho << endl;
-                    arquivo << manager->alunos[i]->Julho << endl;
-                    arquivo << manager->alunos[i]->Agosto << endl;
-                    arquivo << manager->alunos[i]->Setembro << endl;
-                    arquivo << manager->alunos[i]->Outubro << endl;
-                    arquivo << manager->alunos[i]->Novembro << endl;
-                    arquivo << manager->alunos[i]->Dezembro << endl;
-
-                    arquivo << manager->alunos[i]->JaneiroPago << endl;
-                    arquivo << manager->alunos[i]->FevereiroPago << endl;
-                    arquivo << manager->alunos[i]->MarcoPago << endl;
-                    arquivo << manager->alunos[i]->AbrilPago << endl;
-                    arquivo << manager->alunos[i]->MaioPago << endl;
-                    arquivo << manager->alunos[i]->JunhoPago << endl;
-                    arquivo << manager->alunos[i]->JulhoPago << endl;
-                    arquivo << manager->alunos[i]->AgostoPago << endl;
-                    arquivo << manager->alunos[i]->SetembroPago << endl;
-                    arquivo << manager->alunos[i]->OutubroPago << endl;
-                    arquivo << manager->alunos[i]->NovembroPago << endl;
-                    arquivo << manager->alunos[i]->DezembroPago  << endl;
-                    }
-                    arquivo.close();
-                    return 1;
             }
             default:
                 break;
