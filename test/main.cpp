@@ -3,6 +3,7 @@
 #include <iostream>
 #include <locale>
 #include <fstream>
+#include <ios>
 
 #include "Dados.h"
 #include "Pagamentos.h"
@@ -12,7 +13,7 @@
 using namespace std;
 
 int main(){
-setlocale(LC_ALL, "Portuguese");
+//setlocale(LC_ALL, "Portuguese");
 SistemaAlunos *manager = new SistemaAlunos();
 
 //VARIÁVEIS PARA SALVAMENTO DE ARQUIVO
@@ -28,7 +29,7 @@ ifstream arquivo;
 arquivo.open("academia.txt");
 
 //LEITURA DE ARQUIVO
-while(!arquivo.eof()){
+while(1){
         Aluno *p = new Aluno();
         Dados dados = Dados();
 
@@ -43,11 +44,11 @@ while(!arquivo.eof()){
         p->nome = nome2;
         cout << nome2;
 
-        getline(arquivo, cpf2);
-        p->cpf = cpf2;
-
         getline(arquivo,cidade2);
         p->cidade = cidade2;
+
+        getline(arquivo, cpf2);
+        p->cpf = cpf2;
 
         getline(arquivo, endereco2);
         p->endereco = endereco2;
@@ -170,9 +171,14 @@ while(!arquivo.eof()){
         arquivo >> DezembroPago2;
         p->Dezembro = DezembroPago2;
 
+        manager->alunos.push_back(p);
+
         //_____________________________
 
-        manager->alunos.push_back(p);
+            if(!arquivo.eof() || !arquivo.bad() || !arquivo.fail()){
+                break;
+                manager->alunos.push_back(p);
+            }
         }
 arquivo.close();
 
