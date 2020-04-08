@@ -13,7 +13,7 @@ class Aluno : public Dados
 
         virtual ~Aluno();
 
-        vector<Dados> alunos;
+        vector<Dados*> alunos;
 
     protected:
 

@@ -18,7 +18,7 @@ SistemaAlunos::~SistemaAlunos()
 void SistemaAlunos::visualizarAlunos(){
     for(unsigned int i = 0; i < alunos.size(); i++){
         if(alunos[i]->ativo == true){
-        cout << "Aluno [" << i+1 << "]: " << alunos[i]->nome << " ";
+        cout << "Aluno [" << i << "]: " << alunos[i]->nome << " ";
         cout << "Cidade: " << alunos[i]->cidade << " ";
         cout << "CPF: " << alunos[i]->cpf << endl;
         cout << "Endereço: " << alunos[i]->endereco << endl;
@@ -44,11 +44,16 @@ void SistemaAlunos::consultaAluno(){
         if(alunos[i]->nome.find(n)!= std::string::npos){
             if(alunos[i]->ativo == true){
                 cout << "\n" << endl;
-                cout << "Aluno [" << i+1 << "]: " << alunos[i]->nome << " ";
+                cout << "Aluno [" << i << "]: " << alunos[i]->nome << " ";
                 cout << "Cidade: " << alunos[i]->cidade << " ";
                 cout << "CPF: " << alunos[i]->cpf << endl;
                 cout << "Endereço: " << alunos[i]->endereco << endl;
                 cout << "Telefone: " << alunos[i]->telefone << endl;
+                cout << endl;
+                cout << "DATA DE CADASTRAMENTO ORIGINAL DE PAGAMENTO: " << endl;
+                cout << alunos[i]->DiaOriginal << "/" << alunos[i]->MesOriginal << "/" << alunos[i]->AnoOriginal << endl;
+                cout << "DATA DE PAGAMENTOS ATUAIS ATUALIZADAS EM:" << endl;
+                cout << alunos[i]->Dia << "/" << alunos[i]->Mes << "/" << alunos[i]->Ano << endl;
                 cout << endl;
                 cout << "Janeiro : " << alunos[i]->Janeiro; if(alunos[i]->JaneiroPago == true){cout << " OK";};
                 cout << endl;
@@ -92,7 +97,7 @@ void SistemaAlunos::pagto(){
         transform(alunos[i]->nome.begin(),alunos[i]->nome.end(), alunos[i]->nome.begin(), ::tolower);
         if(nouc == alunos[i]->nome || nouc == alunos[i]->cpf){
             if(alunos[i]->ativo == true){
-                cout << "Aluno [" << i+1 << "]: " << alunos[i]->nome << " ";
+                cout << "Aluno [" << i << "]: " << alunos[i]->nome << " ";
                 cout << "Cidade: " << alunos[i]->cidade << " ";
                 cout << "CPF: " << alunos[i]->cpf << endl;
                 cout << "Endereço: " << alunos[i]->endereco << endl;
@@ -195,7 +200,7 @@ void SistemaAlunos::cancelaPagto(){
         transform(alunos[i]->nome.begin(),alunos[i]->nome.end(), alunos[i]->nome.begin(), ::tolower);
         if(nouc == alunos[i]->nome || nouc == alunos[i]->cpf){
             if(alunos[i]->ativo == true){
-                cout << "Aluno [" << i+1 << "]: " << alunos[i]->nome << " ";
+                cout << "Aluno [" << i << "]: " << alunos[i]->nome << " ";
                 cout << "Cidade: " << alunos[i]->cidade << " ";
                 cout << "CPF: " << alunos[i]->cpf << endl;
                 cout << "Endereço: " << alunos[i]->endereco << endl;
