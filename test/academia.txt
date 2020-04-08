@@ -1,6 +1,6 @@
 1daniel cassiano chaves
-SÆo Paulo
-41759628832
+SÃ†o Paulo
+32323232
 Endereco
 Telefone
 2020
@@ -33,7 +33,7 @@ Telefone
 0
 0
 0
-1ant“nio cassiano chaves
+1antâ€œnio cassiano chaves
 Borborema
 3332224445
 Endereco
