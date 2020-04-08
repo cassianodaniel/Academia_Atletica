@@ -209,7 +209,7 @@ int main()
             system("cls");
             Aluno *a1 = new Aluno(nome, cpf, cidade, endereco, telefone);
 
-            cout << "Por favor, digite apenas o dia (DOIS DÍGITOS) do primeiro pagamento \n do aluno (dia que as parcelas ser�o geradas)\n"
+            cout << "Por favor, digite apenas o dia (DOIS DÍGITOS) do primeiro pagamento \n do aluno (dia que as parcelas serão geradas)\n"
                  << endl;
             int dia;
             cin >> dia;
