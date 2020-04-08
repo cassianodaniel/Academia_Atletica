@@ -17,7 +17,7 @@ int main()
     //setlocale(LC_ALL, "Portuguese");
     SistemaAlunos *manager = new SistemaAlunos();
 
-    //VARI�VEIS PARA SALVAMENTO DE ARQUIVO
+    //VARIÁVEIS PARA SALVAMENTO DE ARQUIVO
     string nome2, cpf2, cidade2, endereco2, telefone2;                                                                                                                    //dados.h
     bool Ativo2;                                                                                                                                                          //dados.h
     int Dia2, Mes2, Ano2;                                                                                                                                                 //pagamentos.h
@@ -42,7 +42,7 @@ int main()
         arquivo >> Ativo2;
         p->ativo = Ativo2;
 
-        //_____________________________VARI�VEIS ENDERECO e ATIVO (DADOS)
+        //_____________________________VARIÁVEIS ENDERECO e ATIVO (DADOS)
 
         getline(arquivo, nome2);
         p->nome = nome2;
@@ -59,7 +59,7 @@ int main()
         getline(arquivo, telefone2);
         p->telefone = telefone2;
 
-        //__________________________VARI�VEIS DATA e DATA ORIGINAL
+        //__________________________VARIÁVEIS DATA e DATA ORIGINAL
 
         arquivo >> Ano2;
 
@@ -85,7 +85,7 @@ int main()
 
         p->DiaOriginal = DiaOriginal2;
 
-        //________________________VARI�VEIS M�S
+        //________________________VARIÁVEIS MÊS
 
         arquivo >> Janeiro2;
 
@@ -135,7 +135,7 @@ int main()
 
         p->Dezembro = Dezembro2;
 
-        //___________________________ VARI�VEIS M�S PAGOS
+        //___________________________ VARIÁVEIS MÊS PAGOS
 
         arquivo >> JaneiroPago2;
         p->Janeiro = JaneiroPago2;
@@ -186,18 +186,18 @@ int main()
     int menu = 0;
     while (menu != 9)
     {
-        cout << "Bem-vindo ao programa de gerenciamento da Academia Atl�tica!" << endl;
-        cout << "Por favor, digite a op��o desejada:" << endl;
+        cout << "Bem-vindo ao programa de gerenciamento da Academia Atlética!" << endl;
+        cout << "Por favor, digite a opção desejada:" << endl;
         cout << "1: Cadastrar novo aluno." << endl;
         cout << "2: Editar cadastro de aluno." << endl;
         cout << "3: Cadastrar novo pagamento." << endl;
         cout << "4: Cancelar pagamento." << endl;
-        cout << "5: Consultar situa��o de aluno." << endl;
+        cout << "5: Consultar situação de aluno." << endl;
         cout << "6: Visualizar todos os alunos cadastrados." << endl;
         cout << "7: Remover aluno cadastrado." << endl;
-        cout << "8: Fechar programa e salvar altera��es/dados.\n"
+        cout << "8: Fechar programa e salvar alterações/dados.\n"
              << endl;
-        cout << ("Aten��o! Apenas saia do programa utilizando o comando sair!\n\n");
+        cout << ("Atenção! Apenas saia do programa utilizando o comando sair!\n\n");
         cin >> menu;
         cin.ignore();
         system("cls");
@@ -220,7 +220,7 @@ int main()
             string cidade;
             getline(cin, cidade);
             system("cls");
-            cout << "Por favor, digite o endere�o do(a) aluno(a) a ser cadastrado.\n"
+            cout << "Por favor, digite o endereço do(a) aluno(a) a ser cadastrado.\n"
                  << endl;
             string endereco;
             getline(cin, endereco);
@@ -232,19 +232,19 @@ int main()
             system("cls");
             Aluno *a1 = new Aluno(nome, cpf, cidade, endereco, telefone);
 
-            cout << "Por favor, digite apenas o dia (DOIS D�GITOS) do primeiro pagamento \n do aluno (dia que as parcelas ser�o geradas)\n"
+            cout << "Por favor, digite apenas o dia (DOIS DÍGITOS) do primeiro pagamento \n do aluno (dia que as parcelas ser�o geradas)\n"
                  << endl;
             int dia;
             cin >> dia;
             cin.ignore();
             system("cls");
-            cout << "Por favor, digite apenas o m�s (DOIS D�GITOS) do primeiro pagamento do aluno.\n"
+            cout << "Por favor, digite apenas o mês (DOIS DÍGITOS) do primeiro pagamento do aluno.\n"
                  << endl;
             int mes;
             cin >> mes;
             cin.ignore();
             system("cls");
-            cout << "Por favor, digite apenas o ano (QUATRO D�GITOS) do primeiro pagamento do aluno.\n"
+            cout << "Por favor, digite apenas o ano (QUATRO DÍGITOS) do primeiro pagamento do aluno.\n"
                  << endl;
             int ano;
             cin >> ano;
@@ -262,7 +262,7 @@ int main()
         case 2:
         {
             manager->consultaAluno();
-            cout << "Por favor, digite o CPF do aluno que ser� editado.\n"
+            cout << "Por favor, digite o CPF do aluno que será editado.\n"
                  << endl;
             string c;
             cin >> c;
@@ -293,7 +293,7 @@ int main()
         case 7:
         {
             manager->consultaAluno();
-            cout << "Por favor, digite o CPF do aluno que ser� removido." << endl;
+            cout << "Por favor, digite o CPF do aluno que será removido." << endl;
             string c;
             cin >> c;
             manager->removeAluno(c);
@@ -301,10 +301,10 @@ int main()
         }
         case 8:
         {
-            cout << "Voc� fez alguma alteracao de dados no sistema?\n"
+            cout << "Você fez alguma alteracao de dados no sistema?\n"
                  << endl;
             cout << "1. SIM" << endl;
-            cout << "2. N�O" << endl;
+            cout << "2. NÃO" << endl;
             int aux;
             cin >> aux;
             cin.ignore();
