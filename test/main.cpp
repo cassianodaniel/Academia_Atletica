@@ -31,10 +31,8 @@ int main()
     //LEITURA DE ARQUIVO
     while (1)
     {
-        
         if (arquivo.eof() || arquivo.bad() || arquivo.fail())
         {
-            //manager->alunos.push_back(p);
             break;
         }
         Aluno *p = new Aluno();
@@ -62,77 +60,59 @@ int main()
         //__________________________VARIÁVEIS DATA e DATA ORIGINAL
 
         arquivo >> Ano2;
-
         p->Ano = Ano2;
 
         arquivo >> AnoOriginal2;
-
         p->AnoOriginal = AnoOriginal2;
 
         arquivo >> Mes2;
-
         p->setMes(Mes2);
 
         arquivo >> MesOriginal2;
-
         p->MesOriginal = MesOriginal2;
 
         arquivo >> Dia2;
-
         p->Dia = Dia2;
 
         arquivo >> DiaOriginal2;
-
         p->DiaOriginal = DiaOriginal2;
 
         //________________________VARIÁVEIS MÊS
 
         arquivo >> Janeiro2;
-
         p->Janeiro = Janeiro2;
 
         arquivo >> Fevereiro2;
-
         p->Fevereiro = Fevereiro2;
 
         arquivo >> Marco2;
-
         p->Marco = Marco2;
 
         arquivo >> Abril2;
-
         p->Abril = Abril2;
 
         arquivo >> Maio2;
-
         p->Maio = Maio2;
 
         arquivo >> Junho2;
-
         p->Junho = Junho2;
 
         arquivo >> Julho2;
-
         p->Julho = Julho2;
 
         arquivo >> Agosto2;
-
         p->Agosto = Agosto2;
 
         arquivo >> Setembro2;
-
         p->Setembro = Setembro2;
 
         arquivo >> Outubro2;
-
         p->Outubro = Outubro2;
 
         arquivo >> Novembro2;
-
         p->Novembro = Novembro2;
 
         arquivo >> Dezembro2;
-
         p->Dezembro = Dezembro2;
 
         //___________________________ VARIÁVEIS MÊS PAGOS
@@ -177,9 +157,6 @@ int main()
         p->geraParcelas();
 
         manager->alunos.push_back(p);
-
-        //_____________________________
-       
     }
     arquivo.close();
 
