@@ -17,9 +17,10 @@ SistemaAlunos::~SistemaAlunos()
 
 void SistemaAlunos::visualizarAlunos(){
     for(unsigned int i = 0; i < alunos.size(); i++){
+        if(alunos[i]->nome == ""){continue;} //sem nome
         if(alunos[i]->ativo == true){
-        cout << "Aluno [" << i << "]: " << alunos[i]->nome << " ";
-        cout << "Cidade: " << alunos[i]->cidade << " ";
+        cout << "Aluno [" << i << "]: " << alunos[i]->nome << endl;
+        cout << "Cidade: " << alunos[i]->cidade << endl;
         cout << "CPF: " << alunos[i]->cpf << endl;
         cout << "Endereço: " << alunos[i]->endereco << endl;
         cout << "Telefone: " << alunos[i]->telefone << endl;
@@ -42,17 +43,15 @@ void SistemaAlunos::consultaAluno(){
         transform(alunos[i]->nome.begin(),alunos[i]->nome.end(), alunos[i]->nome.begin(), ::tolower);
 
         if(alunos[i]->nome.find(n)!= std::string::npos){
+            if(alunos[i]->nome == ""){continue;} //sem nome
             if(alunos[i]->ativo == true){
                 cout << "\n" << endl;
-                cout << "Aluno [" << i << "]: " << alunos[i]->nome << " ";
-                cout << "Cidade: " << alunos[i]->cidade << " ";
+                cout << "Aluno [" << i << "]: " << alunos[i]->nome << endl;
+                cout << "Cidade: " << alunos[i]->cidade << endl;
                 cout << "CPF: " << alunos[i]->cpf << endl;
                 cout << "Endereço: " << alunos[i]->endereco << endl;
                 cout << "Telefone: " << alunos[i]->telefone << endl;
                 cout << endl;
-                cout << "DATA DE CADASTRAMENTO ORIGINAL DE PAGAMENTO: " << endl;
-                cout << alunos[i]->DiaOriginal << "/" << alunos[i]->MesOriginal << "/" << alunos[i]->AnoOriginal << endl;
-                cout << "DATA DE PAGAMENTOS ATUAIS ATUALIZADAS EM:" << endl;
                 cout << alunos[i]->Dia << "/" << alunos[i]->Mes << "/" << alunos[i]->Ano << endl;
                 cout << endl;
                 cout << "Janeiro : " << alunos[i]->Janeiro; if(alunos[i]->JaneiroPago == true){cout << " OK";};
@@ -69,8 +68,7 @@ void SistemaAlunos::consultaAluno(){
                 cout << endl;
                 cout << "Julho : " << alunos[i]->Julho; if(alunos[i]->JulhoPago == true){cout << " OK";};
                 cout << endl;
-                cout << "Agosto : " <<
-                alunos[i]->Agosto; if(alunos[i]->AgostoPago == true){cout << " OK";};
+                cout << "Agosto : " << alunos[i]->Agosto; if(alunos[i]->AgostoPago == true){cout << " OK";};
                 cout << endl;
                 cout << "Setembro : " << alunos[i]->Setembro; if(alunos[i]->SetembroPago == true){cout << " OK";};
                 cout << endl;
@@ -96,9 +94,10 @@ void SistemaAlunos::pagto(){
     for(unsigned int i=0; i < alunos.size(); i++){
         transform(alunos[i]->nome.begin(),alunos[i]->nome.end(), alunos[i]->nome.begin(), ::tolower);
         if(nouc == alunos[i]->nome || nouc == alunos[i]->cpf){
+            if(alunos[i]->nome == ""){continue;} //sem nome
             if(alunos[i]->ativo == true){
-                cout << "Aluno [" << i << "]: " << alunos[i]->nome << " ";
-                cout << "Cidade: " << alunos[i]->cidade << " ";
+                cout << "Aluno [" << i << "]: " << alunos[i]->nome << endl;
+                cout << "Cidade: " << alunos[i]->cidade << endl;
                 cout << "CPF: " << alunos[i]->cpf << endl;
                 cout << "Endereço: " << alunos[i]->endereco << endl;
                 cout << "Telefone: " << alunos[i]->telefone << endl;
@@ -199,18 +198,17 @@ void SistemaAlunos::cancelaPagto(){
     for(unsigned int i=0; i < alunos.size(); i++){
         transform(alunos[i]->nome.begin(),alunos[i]->nome.end(), alunos[i]->nome.begin(), ::tolower);
         if(nouc == alunos[i]->nome || nouc == alunos[i]->cpf){
+            if(alunos[i]->nome == ""){continue;} //sem nome
             if(alunos[i]->ativo == true){
-                cout << "Aluno [" << i << "]: " << alunos[i]->nome << " ";
-                cout << "Cidade: " << alunos[i]->cidade << " ";
+                cout << "Aluno [" << i << "]: " << alunos[i]->nome << endl;
+                cout << "Cidade: " << alunos[i]->cidade << endl;
                 cout << "CPF: " << alunos[i]->cpf << endl;
                 cout << "Endereço: " << alunos[i]->endereco << endl;
                 cout << "Telefone: " << alunos[i]->telefone << endl;
                 cout << endl;
-                cout << "Janeiro : " <<
-                alunos[i]->Janeiro; if(alunos[i]->JaneiroPago == true){cout << " OK";};
+                cout << "Janeiro : " << alunos[i]->Janeiro; if(alunos[i]->JaneiroPago == true){cout << " OK";};
                 cout << endl;
-                cout << "Fevereiro : " <<
-                alunos[i]->Fevereiro; if(alunos[i]->FevereiroPago == true){cout << " OK";};
+                cout << "Fevereiro : " << alunos[i]->Fevereiro; if(alunos[i]->FevereiroPago == true){cout << " OK";};
                 cout << endl;
                 cout << "Marco : " << alunos[i]->Marco; if(alunos[i]->MarcoPago == true){cout << " OK";};
                 cout << endl;

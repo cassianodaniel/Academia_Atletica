@@ -14,10 +14,10 @@ using namespace std;
 
 int main()
 {
-    //setlocale(LC_ALL, "Portuguese");
+    setlocale(LC_ALL, "Portuguese");
     SistemaAlunos *manager = new SistemaAlunos();
 
-    //VARIÃVEIS PARA SALVAMENTO DE ARQUIVO
+    //VARIÁVEIS PARA SALVAMENTO DE ARQUIVO
     string nome2, cpf2, cidade2, endereco2, telefone2;                                                                                                                    //dados.h
     bool Ativo2;                                                                                                                                                          //dados.h
     int Dia2, Mes2, Ano2;                                                                                                                                                 //pagamentos.h
@@ -40,7 +40,7 @@ int main()
         arquivo >> Ativo2;
         p->ativo = Ativo2;
 
-        //_____________________________VARIÃVEIS ENDERECO e ATIVO (DADOS)
+        //_____________________________VARIÁVEIS ENDERECO e ATIVO (DADOS)
 
         getline(arquivo, nome2);
         p->nome = nome2;
@@ -57,7 +57,7 @@ int main()
         getline(arquivo, telefone2);
         p->telefone = telefone2;
 
-        //__________________________VARIÃVEIS DATA e DATA ORIGINAL
+        //__________________________VARIÁVEIS DATA e DATA ORIGINAL
 
         arquivo >> Ano2;
         p->Ano = Ano2;
@@ -77,7 +77,7 @@ int main()
         arquivo >> DiaOriginal2;
         p->DiaOriginal = DiaOriginal2;
 
-        //________________________VARIÃVEIS MÃŠS
+        //________________________VARIÁVEIS MÊS
 
         arquivo >> Janeiro2;
         p->Janeiro = Janeiro2;
@@ -115,7 +115,7 @@ int main()
         arquivo >> Dezembro2;
         p->Dezembro = Dezembro2;
 
-        //___________________________ VARIÃVEIS MÃŠS PAGOS
+        //___________________________ VARIÁVEIS MÊS PAGOS
 
         arquivo >> JaneiroPago2;
         p->Janeiro = JaneiroPago2;
@@ -163,18 +163,18 @@ int main()
     int menu = 0;
     while (menu != 9)
     {
-        cout << "Bem-vindo ao programa de gerenciamento da Academia AtlÃ©tica!" << endl;
-        cout << "Por favor, digite a opÃ§Ã£o desejada:" << endl;
+        cout << "Bem-vindo ao programa de gerenciamento da Academia Atlética!" << endl;
+        cout << "Por favor, digite a opção desejada:" << endl;
         cout << "1: Cadastrar novo aluno." << endl;
         cout << "2: Editar cadastro de aluno." << endl;
         cout << "3: Cadastrar novo pagamento." << endl;
         cout << "4: Cancelar pagamento." << endl;
-        cout << "5: Consultar situaÃ§Ã£o de aluno." << endl;
+        cout << "5: Consultar situação de aluno." << endl;
         cout << "6: Visualizar todos os alunos cadastrados." << endl;
         cout << "7: Remover aluno cadastrado." << endl;
-        cout << "8: Fechar programa e salvar alteraÃ§Ãµes/dados.\n"
+        cout << "8: Fechar programa e salvar alterações/dados.\n"
              << endl;
-        cout << ("AtenÃ§Ã£o! Apenas saia do programa utilizando o comando sair!\n\n");
+        cout << ("Atenção! Apenas saia do programa utilizando o comando sair!\n\n");
         cin >> menu;
         cin.ignore();
         system("cls");
@@ -197,7 +197,7 @@ int main()
             string cidade;
             getline(cin, cidade);
             system("cls");
-            cout << "Por favor, digite o endereÃ§o do(a) aluno(a) a ser cadastrado.\n"
+            cout << "Por favor, digite o endereço do(a) aluno(a) a ser cadastrado.\n"
                  << endl;
             string endereco;
             getline(cin, endereco);
@@ -209,19 +209,19 @@ int main()
             system("cls");
             Aluno *a1 = new Aluno(nome, cpf, cidade, endereco, telefone);
 
-            cout << "Por favor, digite apenas o dia (DOIS DÃGITOS) do primeiro pagamento \n do aluno (dia que as parcelas serÃ£o geradas)\n"
+            cout << "Por favor, digite apenas o dia (DOIS DÍGITOS) do primeiro pagamento \n do aluno (dia que as parcelas serão geradas)\n"
                  << endl;
             int dia;
             cin >> dia;
             cin.ignore();
             system("cls");
-            cout << "Por favor, digite apenas o mÃªs (DOIS DÃGITOS) do primeiro pagamento do aluno.\n"
+            cout << "Por favor, digite apenas o mês (DOIS DÍGITOS) do primeiro pagamento do aluno.\n"
                  << endl;
             int mes;
             cin >> mes;
             cin.ignore();
             system("cls");
-            cout << "Por favor, digite apenas o ano (QUATRO DÃGITOS) do primeiro pagamento do aluno.\n"
+            cout << "Por favor, digite apenas o ano (QUATRO DÍGITOS) do primeiro pagamento do aluno.\n"
                  << endl;
             int ano;
             cin >> ano;
@@ -239,7 +239,7 @@ int main()
         case 2:
         {
             manager->consultaAluno();
-            cout << "Por favor, digite o CPF do aluno que serÃ¡ editado.\n"
+            cout << "Por favor, digite o CPF do aluno que será editado.\n"
                  << endl;
             string c;
             cin >> c;
@@ -263,14 +263,13 @@ int main()
         }
         case 6:
         {
-            cout << "Para consultar todos os alunos, aperte ENTER." << endl;
-            manager->consultaAluno();
+            manager->visualizarAlunos();
             break;
         }
         case 7:
         {
             manager->consultaAluno();
-            cout << "Por favor, digite o CPF do aluno que serÃ¡ removido." << endl;
+            cout << "Por favor, digite o CPF do aluno que será removido." << endl;
             string c;
             cin >> c;
             manager->removeAluno(c);
@@ -278,21 +277,12 @@ int main()
         }
         case 8:
         {
-            cout << "VocÃª fez alguma alteracao de dados no sistema?\n"
-                 << endl;
-            cout << "1. SIM" << endl;
-            cout << "2. NÃƒO" << endl;
-            int aux;
-            cin >> aux;
-            cin.ignore();
-            if (aux == 1)
-            {
                 fstream arquivo;
                 arquivo.open("academia.txt", ios::out | ios::trunc);
                 for (unsigned int i = 0; i < manager->alunos.size(); i++)
                 {
 
-                    if (!manager->alunos[i]->ativo)
+                    if ((!manager->alunos[i]->ativo) || (manager->alunos[i]->nome == ""))
                     {
                         continue;
                     }
@@ -338,11 +328,6 @@ int main()
                 }
                 arquivo.close();
                 return 1;
-            }
-            else
-            {
-                return 0;
-            }
         }
         default:
             break;
