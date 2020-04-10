@@ -336,6 +336,6 @@ int main()
         default:
             break;
         }
-    } //endcase
+    }
     return 0;
 }
