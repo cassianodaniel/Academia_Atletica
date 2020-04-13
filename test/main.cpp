@@ -176,8 +176,7 @@ int main()
         cout << "5: Consultar situação de aluno." << endl;
         cout << "6: Visualizar todos os alunos cadastrados." << endl;
         cout << "7: Remover aluno cadastrado." << endl;
-        cout << "8: Fechar programa e salvar alterações/dados.\n"
-             << endl;
+        cout << "8: Fechar programa e salvar alterações/dados.\n" << endl;
         cout << ("Atenção! Apenas saia do programa utilizando o comando sair!\n\n");
         cin >> menu;
         cin.ignore();
@@ -336,6 +335,6 @@ int main()
         default:
             break;
         }
-    }
+    } //endcase
     return 0;
 }
