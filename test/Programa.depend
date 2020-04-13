@@ -50,7 +50,7 @@
 	<algorithm>
 	<vector>
 
-1586811788 source:c:\users\asus\desktop\programa da academia\test\main.cpp
+1586812322 source:c:\users\asus\desktop\programa da academia\test\main.cpp
 	<stdio.h>
 	<stdlib.h>
 	<iostream>
@@ -89,11 +89,11 @@
 1586314524 source:c:\users\asus\desktop\programa da academia\test\src\dados.cpp
 	"Dados.h"
 
-1586812138 source:c:\users\asus\desktop\programa da academia\test\src\pagamentos.cpp
+1586812795 source:c:\users\asus\desktop\programa da academia\test\src\pagamentos.cpp
 	"Pagamentos.h"
 	<iostream>
 
-1586810424 source:c:\users\asus\desktop\programa da academia\test\src\sistemaalunos.cpp
+1586813098 source:c:\users\asus\desktop\programa da academia\test\src\sistemaalunos.cpp
 	"SistemaAlunos.h"
 	<iostream>
 	"stdio.h"

@@ -76,7 +76,7 @@ void SistemaAlunos::consultaAluno(){
                 cout << endl;
                 cout << "Novembro : " << alunos[i]->Novembro; if(alunos[i]->NovembroPago == true){cout << " OK";};
                 cout << endl;
-                cout << "Dezembro : " << alunos[i]->Dezembro; if(alunos[i]->Dezembro == true){cout << " OK";};
+                cout << "Dezembro : " << alunos[i]->Dezembro; if(alunos[i]->DezembroPago == true){cout << " OK";};
                 cout << endl;
                 cout << "-----------------------------------------------------------" << endl;
             }
@@ -124,7 +124,7 @@ void SistemaAlunos::pagto(){
                 cout << endl;
                 cout << "Novembro : " << alunos[i]->Novembro; if(alunos[i]->NovembroPago == true){cout << " OK";};
                 cout << endl;
-                cout << "Dezembro : " << alunos[i]->Dezembro; if(alunos[i]->Dezembro == true){cout << " OK";};
+                cout << "Dezembro : " << alunos[i]->Dezembro; if(alunos[i]->DezembroPago == true){cout << " OK";};
                 cout << endl;
                 cout << "-----------------------------------------------------------" << endl;
                 cout << "Por favor, digite o mês de pagamento a ser debitado." << endl;
@@ -228,7 +228,7 @@ void SistemaAlunos::cancelaPagto(){
                 cout << endl;
                 cout << "Novembro : " << alunos[i]->Novembro; if(alunos[i]->NovembroPago == true){cout << " OK";};
                 cout << endl;
-                cout << "Dezembro : " << alunos[i]->Dezembro; if(alunos[i]->Dezembro == true){cout << " OK";};
+                cout << "Dezembro : " << alunos[i]->Dezembro; if(alunos[i]->DezembroPago == true){cout << " OK";};
                 cout << endl;
                 cout << "-----------------------------------------------------------" << endl;
                 cout << "Por favor, digite o mês de pagamento a ser removido." << endl;

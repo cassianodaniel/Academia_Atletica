@@ -41,7 +41,11 @@ void Pagamentos::setPagamento(int dia, int mes, int ano)
 {
     if(dia < 1 || dia > 31){
         this->Dia = 0;
-        this->DiaOriginal= Dia;
+        this->DiaOriginal = 0;
+    }
+    if(dia > 0 && dia < 32){
+        this->Dia = dia;
+        this->DiaOriginal = dia;
     }
     if(ano >= 0)
     {
