@@ -168,8 +168,8 @@ int main()
     }
     arquivo.close();
 
-    int menu = 0;
-    while (menu != 9)
+    string menu;
+    while (menu != 100000000)
     {
         cout << "Bem-vindo ao programa de gerenciamento da Academia Atlética!" << endl;
         cout << "Por favor, digite a opção desejada:" << endl;
