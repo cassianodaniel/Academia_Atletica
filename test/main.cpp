@@ -62,7 +62,7 @@ int main()
         p->AnoOriginal = AnoOriginal2;
 
         arquivo >> Mes2;
-        p->setMes(Mes2);
+        p->Mes = Mes2;
 
         arquivo >> MesOriginal2;
         p->MesOriginal = MesOriginal2;
@@ -154,12 +154,16 @@ int main()
             break;
         }
 
-        p->setPagamento(Dia2, Mes2, Ano2);
-
-        if(p->Janeiro < 1){
+        if(p->Janeiro < 1){//se as parcelas do usuário não existirem, gere as parcelas e sete o pagamento
         p->geraParcelas();
+        p->setPagamento(Dia2, Mes2, Ano2);
         }
-
+        if(p->DiaOriginal == 0){//debug diaoriginal
+            p->DiaOriginal = 1;
+        }
+        if(p->Dia == 0){//debug dia
+            p->Dia = 1;
+        }
         manager->alunos.push_back(p);
     }
     arquivo.close();

@@ -50,3 +50,54 @@
 	<algorithm>
 	<vector>
 
+1586811788 source:c:\users\asus\desktop\programa da academia\test\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<locale>
+	<fstream>
+	<ios>
+	"Dados.h"
+	"Pagamentos.h"
+	"Aluno.h"
+	"SistemaAlunos.h"
+
+1586314524 c:\users\asus\desktop\programa da academia\test\include\dados.h
+	<iostream>
+	<string>
+	<vector>
+	"Pagamentos.h"
+
+1586811967 c:\users\asus\desktop\programa da academia\test\include\pagamentos.h
+	<iostream>
+	<string.h>
+
+1586314524 c:\users\asus\desktop\programa da academia\test\include\aluno.h
+	"Dados.h"
+	<vector>
+	<iostream>
+
+1586314524 c:\users\asus\desktop\programa da academia\test\include\sistemaalunos.h
+	"Aluno.h"
+
+1586314524 source:c:\users\asus\desktop\programa da academia\test\src\aluno.cpp
+	"Aluno.h"
+	<string>
+	<vector>
+	<iostream>
+
+1586314524 source:c:\users\asus\desktop\programa da academia\test\src\dados.cpp
+	"Dados.h"
+
+1586812138 source:c:\users\asus\desktop\programa da academia\test\src\pagamentos.cpp
+	"Pagamentos.h"
+	<iostream>
+
+1586810424 source:c:\users\asus\desktop\programa da academia\test\src\sistemaalunos.cpp
+	"SistemaAlunos.h"
+	<iostream>
+	"stdio.h"
+	<string>
+	<algorithm>
+	<vector>
+

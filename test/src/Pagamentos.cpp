@@ -35,22 +35,14 @@ Pagamentos::Pagamentos(){
     this->OutubroPago = false;
     this->NovembroPago = false;
     this->DezembroPago = false;
-    /*this->JaneiroPagoEm = ;
-    this->FevereiroPagoEm = ;
-    this->MarcoPagoEm = ;
-    this->AbrilPagoEm = ;
-    this->MaioPagoEm = ;
-    this->JunhoPagoEm = ;
-    this->JulhoPagoEm = ;
-    this->AgostoPagoEm = ;
-    this->SetembroPagoEm = ;
-    this->OutubroPagoEm = ;
-    this->NovembroPagoEm = ;
-    this->DezembroPagoEm = ;*/
 }
 
 void Pagamentos::setPagamento(int dia, int mes, int ano)
 {
+    if(dia < 1 || dia > 31){
+        this->Dia = 0;
+        this->DiaOriginal= Dia;
+    }
     if(ano >= 0)
     {
         this->Ano = ano;
@@ -63,6 +55,7 @@ void Pagamentos::setPagamento(int dia, int mes, int ano)
     {
         this->Mes = mes;
         this->MesOriginal = mes;
+
         if(mes == 1){
             this->JaneiroPago = true;
         }
@@ -99,6 +92,7 @@ void Pagamentos::setPagamento(int dia, int mes, int ano)
         if(mes == 12){
             this->DezembroPago = true;
         }
+
         if(mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12)
         {
             if(dia >= 1 && dia <= 31)
@@ -117,19 +111,11 @@ void Pagamentos::setPagamento(int dia, int mes, int ano)
                 this->Dia = dia;
             else this->Dia = 28;
         }
-        /*else if(ano % 4 == 0 && ano % 100 != 0 && ano % 400 == 0) //OPCAO DE ANO BISSEXTO
-        {
-            if(mes == 2)
-            {
-                if(dia >= 1 && dia <= 29){
-                    this->Dia = dia;
-                }
-            }
-            else this->Dia = 29;
-        }*/
     }
     else this->Mes = 0;
-    this->DiaOriginal = Dia;
+    if(dia == 1){
+        this->Dia = dia;
+    }
 }
 
 int Pagamentos::getAno()
@@ -155,6 +141,10 @@ void Pagamentos::setMes(int mes)
 void Pagamentos::setAno(int ano)
 {
     Ano = (ano >= 0) ? ano : -ano;
+}
+
+void Pagamentos::setDia(int dia){
+    Dia = (dia >=1 && dia <= 31) ? dia : 0;
 }
 
 void Pagamentos::geraParcelas(){

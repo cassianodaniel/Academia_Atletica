@@ -236,7 +236,6 @@ void SistemaAlunos::cancelaPagto(){
                 cin >> mes;
                 if(mes=="Janeiro" || mes=="janeiro" || mes=="JANEIRO"){
                     alunos[i]->JaneiroPago = false;
-                    alunos[i]->Janeiro = alunos[i]->DiaOriginal;
                 }
                 if(mes=="Fevereiro" || mes=="fevereiro" || mes=="FEVEREIRO"){
                     alunos[i]->FevereiroPago = false;

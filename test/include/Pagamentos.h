@@ -14,6 +14,7 @@ class Pagamentos{
         int getDia();
         int getAno();
         int getMes();
+        void setDia(int);
         void setMes(int);
         void setAno(int);
 
